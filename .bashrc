@@ -11,7 +11,7 @@ shopt -s histappend
 # User specific aliases and functions
 #alias omake="omake -j2 --verbose"
 export PATH=$PATH:$HOME/bin
-export EDITOR=vimx
+export EDITOR=vim
 BLUE="\[\033[0;34m\]"
 GREEN="\[\033[0;32m\]"
 CYAN="\[\033[0;36m\]"

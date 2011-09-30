@@ -1,3 +1,4 @@
+set dir=/tmp,$HOME/tmp
 set history=100
 
 "disable bells
