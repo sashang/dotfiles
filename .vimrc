@@ -118,7 +118,9 @@ let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=1
 let g:clang_debug=1
 let g:clang_user_options='-std=gnu++0x'
+let g:clang_user_options=''
 "let g:clang_user_options='-fblocks -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300'
+"let g:clang_user_options='-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/core/include -I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/clmsv/include'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
@@ -134,4 +136,11 @@ function! RotateColorscheme()
   let l:name = s:colorschemes[s:colorscheme_idx]
   execute 'colorscheme '.l:name
 endfunction
+
+function! ChangeProfile(name)
+  if a:name == "opensaf"
+    let g:clang_user_options='-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/core/include -I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/clmsv/include'
+  endif
+endfunction
+
 
