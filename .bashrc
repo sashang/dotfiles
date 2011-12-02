@@ -4,6 +4,10 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+#stop the terminal from intercepting ctrl-s and let bash
+#handle it as incremetal searchc.
+stty -ixon
+
 #10000 commands in the history list.
 export HISTFILESIZE=10000
 export HISTCONTROL=erasedups
@@ -38,4 +42,10 @@ PROMPT_COMMAND='RET=$?;\
   fi;\
   PS1="$GREEN\u@\h $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
 
+export PATH=$HOME/cbaExDir/provided/DXutils/bin:$HOME/cbaExDir/provided/dxcpp/compilers/bin:$PATH
+export DX_SYSROOT_X86_64=$HOME/cbaExDir/provided/LINUX_API
+export DX_CUSTOM_RPATH=$HOME/cbaExDir/provided/coremw_sdk/lib64/opensaf
+export INCLIBPATH=$HOME/cbaExDir/provided/coremw_sdk
+
 alias ls="ls --color"
+

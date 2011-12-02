@@ -1,7 +1,7 @@
 set nocp
 set dir=/tmp,$HOME/tmp
 set history=100
-set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sashan/.vim/clang_complete
+set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sashan/.vim/clang_complete,/home/sashan/.vim/ack
 
 "disable bells
 set noerrorbells
@@ -38,9 +38,6 @@ map <leader>l :set list!<cr>
 "toggle highlight search
 map <leader>h :set hlsearch!<cr> 
 
-"toggle spelling
-map <leader>p :set spell!<cr> 
-
 "map \d to deleting buffers
 map <leader>d :bd!<cr>
 
@@ -56,7 +53,6 @@ map <leader>b :FufBuffer<cr>
 "toggle hilights on search text
 map <leader>h :set hlsearch!<cr>
 map <leader>l :set list!<cr>
-map <leader>p :set spell!<cr>
 map <leader>e :Vexplore<cr>
 "map <leader>d :bd<cr>
 map <leader>w :botright cwindow<cr>
@@ -67,6 +63,8 @@ map <c-h> <c-w><c-h>
 map <c-l> <c-w><c-l>
 map <c-j> <c-w><c-j>
 map <c-k> <c-w><c-k>
+"paste whats in the clipboard register (defined by a mouse selection) 
+map <leader>p :set paste<cr>"*p:set nopaste<cr>
 
 "insert e with diacritics - e.g: èéêë
 imap <leader>ue1 <C-V>u00e8
@@ -109,7 +107,7 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 filetype plugin indent on
 syntax on
-autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taq nopaste
+autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 "autocmd BufEnter *.txt set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
 "autocmd BufEnter *.java set noexpandtab textwidth=0
