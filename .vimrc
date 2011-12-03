@@ -1,5 +1,7 @@
+set nocp
 set dir=/tmp,$HOME/tmp
 set history=100
+set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sashan/.vim/clang_complete
 
 "disable bells
 set noerrorbells
@@ -15,7 +17,6 @@ if has("gui_running")
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
 else
-  set paste
   colorscheme ir_black
 endif
 
@@ -61,7 +62,7 @@ map <leader>e :Vexplore<cr>
 map <leader>w :botright cwindow<cr>
 map <leader>] :botright ptnext<cr>
 map <leader>[ :botright ptprev<cr>
-map <leader>m :make -w<cr>
+map <leader>m :bufdo update<cr>:make -w<cr>
 map <c-h> <c-w><c-h>
 map <c-l> <c-w><c-l>
 map <c-j> <c-w><c-j>
@@ -85,7 +86,7 @@ set ignorecase
 set nowrap
 
 "Convert tabs to spaces 
-set expandtab
+set noexpandtab
 
 set tabstop=2
 set shiftwidth=2
@@ -106,20 +107,21 @@ set laststatus=2
 " It's useful to show the buffer number in the status line.
 set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
-set nocp
 filetype plugin indent on
 syntax on
+autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taq nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 "autocmd BufEnter *.txt set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
 
 let g:clang_complete_copen=1
-let g:clang_periodic_quickfix=1
-let g:clang_debug=1
-let g:clang_user_options='-std=gnu++0x'
+let g:clang_periodic_quickfix=0
+let g:clang_debug=0
 "let g:clang_user_options='-fblocks -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300'
-"let g:clang_user_options='-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/core/include -I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/clmsv/include'
+let g:clang_user_options='-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/core/include -I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/clmsv/include' .
+			\'-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/cpsv/include' .
+			\'-I/home/sashan/code/repos/mercurial/opensaf/osaf/services/infrastructure/dtms/include'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
