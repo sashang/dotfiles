@@ -109,7 +109,7 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 filetype plugin indent on
 syntax on
-autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taq nopaste
+autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 "autocmd BufEnter *.txt set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
 "autocmd BufEnter *.java set noexpandtab textwidth=0
