@@ -138,7 +138,13 @@ endfunction
 
 function! ChangeProfile(name)
   if a:name == "opensaf"
-    let g:clang_user_options='-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/core/include -I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/clmsv/include'
+    let l:srcroot = $HOME . '/code/repos/mercurial/opensaf/'
+    let searchpath = l:srcroot . '**'
+    let l:dirs = finddir("include", searchpath, -1)
+    echo l:dirs
+    for item in l:dirs
+      echo item
+    endfor
   endif
 endfunction
 
