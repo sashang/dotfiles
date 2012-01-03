@@ -48,4 +48,5 @@ export DX_CUSTOM_RPATH=$HOME/cbaExDir/provided/coremw_sdk/lib64/opensaf
 export INCLIBPATH=$HOME/cbaExDir/provided/coremw_sdk
 
 alias ls="ls --color"
+alias less="less -Ri"
 
