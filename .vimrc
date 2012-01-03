@@ -7,6 +7,7 @@ set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sasha
 set noerrorbells
 set vb t_vb=
 
+
 if has("gui_running")
   "set guifont=Comic\ 11
   "set guifont=Monospace\ 11
@@ -148,4 +149,6 @@ function! ChangeProfile(name)
   endif
 endfunction
 
-
+"change the Pmenu - sometimes depending on colorscheme it is a horrid pink
+"colour. This hack get's rid of it.
+highlight clear Pmenu
