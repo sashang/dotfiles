@@ -67,11 +67,6 @@ map <c-k> <c-w><c-k>
 "paste whats in the clipboard register (defined by a mouse selection) 
 map <leader>p :set paste<cr>"*p:set nopaste<cr>
 
-"insert e with diacritics - e.g: èéêë
-imap <leader>ue1 <C-V>u00e8
-imap <leader>ue2 <C-V>u00e9
-imap <leader>ue3 <C-V>u00ea
-imap <leader>ue4 <C-V>u00eb
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
