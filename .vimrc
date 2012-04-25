@@ -1,7 +1,9 @@
 set nocp
 set dir=/tmp,$HOME/tmp
 set history=100
+call pathogen#infect()
 set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sashan/.vim/clang_complete
+
 
 "disable bells
 set noerrorbells
@@ -13,11 +15,11 @@ if has("gui_running")
   set guifont=inconsolata\ 13
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
-  colorscheme ir_black
+  colorscheme ps_color
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
 else
-  colorscheme ir_black
+  colorscheme ps_color
 endif
 
 "map ; to : for ease of use
@@ -78,7 +80,6 @@ imap <leader>ue4 <C-V>u00eb
 set wildchar=<TAB> wildmenu wildmode=full
 set wildignore=*.o,*.cmx,*.cma,*.cmi,*.cmo
 
-
 "ignore case when searching
 set ignorecase
 
@@ -86,7 +87,7 @@ set ignorecase
 set nowrap
 
 "Convert tabs to spaces 
-set noexpandtab
+set expandtab
 
 set tabstop=2
 set shiftwidth=2
@@ -119,9 +120,6 @@ let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=0
 let g:clang_debug=0
 "let g:clang_user_options='-fblocks -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300'
-let g:clang_user_options='-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/core/include -I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/clmsv/include' .
-			\'-I/home/sashan/code/repos/mercurial/opensaf/osaf/libs/common/cpsv/include' .
-			\'-I/home/sashan/code/repos/mercurial/opensaf/osaf/services/infrastructure/dtms/include'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
@@ -143,10 +141,11 @@ function! ChangeProfile(name)
     let l:srcroot = $HOME . '/code/repos/mercurial/opensaf/'
     let searchpath = l:srcroot . '**'
     let l:dirs = finddir("include", searchpath, -1)
-    echo l:dirs
     for item in l:dirs
+      let g:clang_user_options .= ' -I'.item 
       echo item
     endfor
+    echo g:clang_user_options
   endif
 endfunction
 
