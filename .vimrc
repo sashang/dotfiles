@@ -9,6 +9,7 @@ set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sasha
 set noerrorbells
 set vb t_vb=
 
+
 if has("gui_running")
   "set guifont=Comic\ 11
   "set guifont=Monospace\ 11
@@ -40,9 +41,6 @@ map <leader>l :set list!<cr>
 "toggle highlight search
 map <leader>h :set hlsearch!<cr> 
 
-"toggle spelling
-map <leader>p :set spell!<cr> 
-
 "map \d to deleting buffers
 map <leader>d :bd!<cr>
 
@@ -58,7 +56,6 @@ map <leader>b :FufBuffer<cr>
 "toggle hilights on search text
 map <leader>h :set hlsearch!<cr>
 map <leader>l :set list!<cr>
-map <leader>p :set spell!<cr>
 map <leader>e :Vexplore<cr>
 "map <leader>d :bd<cr>
 map <leader>w :botright cwindow<cr>
@@ -69,12 +66,9 @@ map <c-h> <c-w><c-h>
 map <c-l> <c-w><c-l>
 map <c-j> <c-w><c-j>
 map <c-k> <c-w><c-k>
+"paste whats in the clipboard register (defined by a mouse selection) 
+map <leader>p :set paste<cr>"*p:set nopaste<cr>
 
-"insert e with diacritics - e.g: èéêë
-imap <leader>ue1 <C-V>u00e8
-imap <leader>ue2 <C-V>u00e9
-imap <leader>ue3 <C-V>u00ea
-imap <leader>ue4 <C-V>u00eb
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
@@ -149,4 +143,6 @@ function! ChangeProfile(name)
   endif
 endfunction
 
-
+"change the Pmenu - sometimes depending on colorscheme it is a horrid pink
+"colour. This hack get's rid of it.
+highlight clear Pmenu
