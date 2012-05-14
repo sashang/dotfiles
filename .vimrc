@@ -1,10 +1,12 @@
+filetype plugin indent on
+syntax on
+call pathogen#infect()
 set nocp
 set dir=/tmp,$HOME/tmp
 set history=100
-call pathogen#infect()
-set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sashan/.vim/clang_complete
 
-
+"disable splash message
+set shortmess+=I
 "disable bells
 set noerrorbells
 set vb t_vb=
@@ -16,11 +18,11 @@ if has("gui_running")
   set guifont=inconsolata\ 13
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
-  colorscheme ps_color
+  colorscheme molokai
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
 else
-  colorscheme ps_color
+  colorscheme molokai
 endif
 
 "map ; to : for ease of use
@@ -50,8 +52,8 @@ map <leader>s :source ~/.vimrc<cr>
 "Open the directory browser that the current windowed file is in
 map <leader>e :Vex<cr>
 
-"start fuzzyfinderbuffer
-map <leader>b :FufBuffer<cr>
+"start ctrlp Most Recently used buffers
+map <leader>b :CtrlPMRU<cr>
 
 "toggle hilights on search text
 map <leader>h :set hlsearch!<cr>
@@ -83,9 +85,9 @@ set nowrap
 "Convert tabs to spaces 
 set expandtab
 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 "allow the cursor free range of movement in all modes (visual, insert etc..)
 set virtualedit=block
@@ -102,8 +104,6 @@ set laststatus=2
 " It's useful to show the buffer number in the status line.
 set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
-filetype plugin indent on
-syntax on
 autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 "autocmd BufEnter *.txt set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
@@ -117,7 +117,7 @@ let g:clang_debug=0
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['wombat', 'anotherdark', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
