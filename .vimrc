@@ -2,8 +2,7 @@ set nocp
 set dir=/tmp,$HOME/tmp
 set history=100
 call pathogen#infect()
-set runtimepath+=,/home/sashan/.vim/fuzzyfinder,/home/sashan/.vim/l9,/home/sashan/.vim/clang_complete
-
+call pathogen#helptags()
 
 "disable bells
 set noerrorbells
@@ -16,11 +15,11 @@ if has("gui_running")
   set guifont=inconsolata\ 13
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
-  colorscheme ps_color
+  colorscheme moria
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
 else
-  colorscheme ps_color
+  colorscheme wombat
 endif
 
 "map ; to : for ease of use
@@ -50,8 +49,8 @@ map <leader>s :source ~/.vimrc<cr>
 "Open the directory browser that the current windowed file is in
 map <leader>e :Vex<cr>
 
-"start fuzzyfinderbuffer
-map <leader>b :FufBuffer<cr>
+"start ctrlp in mru mode
+map <leader>b :CtrlPMRU<cr>
 
 "toggle hilights on search text
 map <leader>h :set hlsearch!<cr>
@@ -83,9 +82,9 @@ set nowrap
 "Convert tabs to spaces 
 set expandtab
 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 "allow the cursor free range of movement in all modes (visual, insert etc..)
 set virtualedit=block
@@ -117,7 +116,7 @@ let g:clang_debug=0
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
@@ -141,6 +140,13 @@ function! ChangeProfile(name)
     endfor
     echo g:clang_user_options
   endif
+endfunction
+
+function! ActivateRainbow()
+    cal rainbow_parentheses#load(0)
+    cal rainbow_parentheses#load(1)
+    cal rainbow_parentheses#load(2)
+    cal rainbow_parentheses#toggle()
 endfunction
 
 "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
