@@ -15,11 +15,11 @@ if has("gui_running")
   set guifont=inconsolata\ 13
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
-  colorscheme moria
+  colorscheme molokai
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
 else
-  colorscheme wombat
+  colorscheme molokai
 endif
 
 "map ; to : for ease of use
