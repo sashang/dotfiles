@@ -92,8 +92,6 @@ set softtabstop=4
 "allow the cursor free range of movement in all modes (visual, insert etc..)
 set virtualedit=block
 
-set path=.,/usr/include/**
-
 "Insert newline after 80 characters
 set textwidth=80
 
@@ -114,6 +112,7 @@ let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=0
 let g:clang_debug=0
 "let g:clang_user_options='-fblocks -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300'
+let g:clang_user_options='-std=c++98'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
