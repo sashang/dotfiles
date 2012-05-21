@@ -14,7 +14,7 @@ export HISTCONTROL=erasedups
 shopt -s histappend
 # User specific aliases and functions
 #alias omake="omake -j2 --verbose"
-export PATH=$PATH:$HOME/bin
+export PATH=$HOME/.gem/ruby/1.9.1/bin:$PATH:$HOME/bin:$HOME/code/repos/git/fudge/toolchain/local/bin
 export EDITOR=vim
 BLUE="\[\033[0;34m\]"
 GREEN="\[\033[0;32m\]"

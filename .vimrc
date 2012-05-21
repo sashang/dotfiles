@@ -4,6 +4,8 @@ call pathogen#infect()
 set nocp
 set dir=/tmp,$HOME/tmp
 set history=100
+call pathogen#infect()
+call pathogen#helptags()
 
 "disable splash message
 set shortmess+=I
@@ -116,7 +118,7 @@ let g:clang_user_options='-std=c++98'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['wombat', 'anotherdark', 'synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
@@ -140,6 +142,13 @@ function! ChangeProfile(name)
     endfor
     echo g:clang_user_options
   endif
+endfunction
+
+function! ActivateRainbow()
+    cal rainbow_parentheses#load(0)
+    cal rainbow_parentheses#load(1)
+    cal rainbow_parentheses#load(2)
+    cal rainbow_parentheses#toggle()
 endfunction
 
 "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
