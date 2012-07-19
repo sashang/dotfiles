@@ -47,6 +47,11 @@ export DX_SYSROOT_X86_64=$HOME/cbaExDir/provided/LINUX_API
 export DX_CUSTOM_RPATH=$HOME/cbaExDir/provided/coremw_sdk/lib64/opensaf
 export INCLIBPATH=$HOME/cbaExDir/provided/coremw_sdk
 
-alias ls="ls --color"
+if ls --color 2>/dev/null; then
+    alias ls="ls --color"
+else
+    alias ls="ls -G"
+fi
+
 alias less="less -Ri"
 
