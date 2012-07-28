@@ -48,6 +48,10 @@ map <leader>h :set hlsearch!<cr>
 "map \d to deleting buffers
 map <leader>d :bd!<cr>
 
+"map \f to format paragraph
+map <leader>f vapgq<cr>
+
+
 "map \s to loading the vimrc file
 map <leader>s :source ~/.vimrc<cr>
 
@@ -106,7 +110,7 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-"autocmd BufEnter *.txt set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=80
+autocmd BufEnter,BufRead *.txt set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=100 foldcolumn=4
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
 
