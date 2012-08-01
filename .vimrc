@@ -7,8 +7,6 @@ set history=100
 call pathogen#infect()
 call pathogen#helptags()
 
-"disable splash message
-set shortmess+=I
 "disable bells
 set noerrorbells
 set vb t_vb=
@@ -78,8 +76,20 @@ map <leader>p :set paste<cr>"*p:set nopaste<cr>
 set wildchar=<TAB> wildmenu wildmode=full
 set wildignore=*.o,*.cmx,*.cma,*.cmi,*.cmo
 
+"jump to regex matches
+set showmatch
+
+"disable splash message
+set shortmess+=I
+
 "ignore case when searching
 set ignorecase
+
+"no ignorecase if Uppercase char is present
+set smartcase
+
+"don't bother with backup files
+set nobackup
 
 "Don't wrap long lines
 set nowrap
@@ -118,7 +128,7 @@ let g:clang_user_options='-std=c++98'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['wombat', 'synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['molokai', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
