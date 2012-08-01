@@ -36,8 +36,7 @@ PROMPT_COMMAND='RET=$?;\
   if [[ $RET != 0 ]]; then\
     ERRMSG=" $RET";\
   fi;\
-  git branch 2>/dev/null 1>/dev/null;\
-  if [[ $? == 0 ]]; then\
+  if git branch 2>/dev/null 1>/dev/null; then\
     BRANCH=$(git branch 2>/dev/null | grep \* |  cut -d " " -f 2);\
   fi;\
   PS1="$GREEN\u@\h $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
