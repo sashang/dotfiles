@@ -14,7 +14,7 @@ export HISTCONTROL=erasedups
 shopt -s histappend
 # User specific aliases and functions
 #alias omake="omake -j2 --verbose"
-export PATH=$HOME/.gem/ruby/1.9.1/bin:$PATH:$HOME/bin:$HOME/code/repos/git/fudge/toolchain/local/bin
+export PATH=$PATH:$HOME/bin
 export EDITOR=vim
 BLUE="\[\033[0;34m\]"
 GREEN="\[\033[0;32m\]"
@@ -30,7 +30,7 @@ LIGHT_RED="\[\033[1;31m\]"
 LIGHT_PURPLE="\[\033[1;35m\]"
 YELLOW="\[\033[1;33m\]"
 WHITE="\[\033[1;37m\]"
-PROMPT_COMMAND='RET=$?;\
+export PROMPT_COMMAND='RET=$?;\
   BRANCH="";\
   ERRMSG="";\
   if [[ $RET != 0 ]]; then\
@@ -38,8 +38,12 @@ PROMPT_COMMAND='RET=$?;\
   fi;\
   if git branch 2>/dev/null 1>/dev/null; then\
     BRANCH=$(git branch 2>/dev/null | grep \* |  cut -d " " -f 2);\
-  fi;\
-  PS1="$GREEN\u@\h $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
+  else
+    BRANCH="(git not installed)"
+  fi;
+
+export PS1="$GREEN\u@\h $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
+
 
 export PATH=$HOME/cbaExDir/provided/DXutils/bin:$HOME/cbaExDir/provided/dxcpp/compilers/bin:$PATH
 export DX_SYSROOT_X86_64=$HOME/cbaExDir/provided/LINUX_API

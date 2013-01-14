@@ -18,11 +18,11 @@ if has("gui_running")
   set guifont=inconsolata\ 13
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
-  colorscheme molokai
+  colorscheme twilight
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
 else
-  colorscheme molokai
+  colorscheme twilight
 endif
 
 "map ; to : for ease of use
@@ -115,12 +115,14 @@ set textwidth=80
 "line
 set laststatus=2
 
+set foldcolumn=0
+
 " It's useful to show the buffer number in the status line.
 set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd BufEnter,BufRead *.txt set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=100 foldcolumn=4
+autocmd BufEnter,BufRead *.txt setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=100 foldcolumn=0
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
 
@@ -132,7 +134,7 @@ let g:clang_user_options='-std=c++98'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['molokai', 'wombat', 'synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
