@@ -36,7 +36,7 @@ export PROMPT_COMMAND='RET=$?;\
   if [[ $RET != 0 ]]; then\
     ERRMSG=" $RET";\
   fi;\
-  if git branch 2>/dev/null 1>/dev/null; then\
+  if which git 2>/dev/null 1>/dev/null; then\
     BRANCH=$(git branch 2>/dev/null | grep \* |  cut -d " " -f 2);\
   else
     BRANCH="(git not installed)"

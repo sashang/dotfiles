@@ -8,7 +8,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 "disable bells
-set noerrorbells
+set noerrorbells novb
 set vb t_vb=
 
 
