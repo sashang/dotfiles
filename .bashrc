@@ -45,11 +45,6 @@ export PROMPT_COMMAND='RET=$?;\
 export PS1="$GREEN\u@\h $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
 
 
-export PATH=$HOME/cbaExDir/provided/DXutils/bin:$HOME/cbaExDir/provided/dxcpp/compilers/bin:$PATH
-export DX_SYSROOT_X86_64=$HOME/cbaExDir/provided/LINUX_API
-export DX_CUSTOM_RPATH=$HOME/cbaExDir/provided/coremw_sdk/lib64/opensaf
-export INCLIBPATH=$HOME/cbaExDir/provided/coremw_sdk
-
 if ls --color 2>/dev/null; then
     alias ls="ls --color"
 else
