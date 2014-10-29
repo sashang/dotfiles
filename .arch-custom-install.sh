@@ -8,7 +8,7 @@ sudo pacman -S gcc ghc
 sudo pacman -S gvim
 sudo pacman -S cabal-install
 sudo pacman -S firefox
-sudo pacman -S ttf-inconsolata
+sudo pacman -S ttf-inconsolata ttf-dejavu
 sudo pacman -S xorg xorg-xinit xorg-xclock xorg-twm xmonad dmenu dmenu dmenu
 cabal install xmobar
 mkdir -p $HOME/code/dotfiles
