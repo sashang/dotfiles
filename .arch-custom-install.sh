@@ -1,15 +1,15 @@
 #!/bin/bash
 
-sudo pacman -Sy
+sudo pacman -Syu
 sudo pacman -S syslog-ng
 systemctl enable syslog-ng.service
 systemctl restart syslog-ng.service
 sudo pacman -S gcc ghc
 sudo pacman -S gvim
 sudo pacman -S cabal-install
-sudo pacman -S firefox
+sudo pacman -S firefox mutt pwsafe
 sudo pacman -S ttf-inconsolata ttf-dejavu
-sudo pacman -S xorg xorg-xinit xorg-xclock xorg-twm xmonad dmenu dmenu dmenu
+sudo pacman -S xorg xorg-xinit xorg-xclock xorg-twm xmonad dmenu
 cabal install xmobar
 mkdir -p $HOME/code/dotfiles
 mkdir -p $HOME/.vim/bundle
