@@ -1,8 +1,8 @@
 # .bashrc
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+if [ -f /etc/bash.bashrc ]; then
+	. /etc/bash.bashrc
 fi
 #stop the terminal from intercepting ctrl-s and let bash
 #handle it as incremetal searchc.
