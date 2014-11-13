@@ -4,16 +4,24 @@ set imap_user="sashan.govender"
 set imap_pass=`echo -n $(pwsafe -pqE workemail | tail -n 1) `
 set folder=imaps://mail.dektech.com.au/
 set spoolfile=+INBOX
-mailboxes =INBOX
+mailboxes =INBOX =Sent =Drafts
 set message_cachedir=~/.mutt/cache
+set header_cache=~/.mutt/cache
 unset imap_passive
 set imap_keepalive=300
 set mail_check=30
+set postponed=+Drafts
 set record=+Sent
 set smtp_url=smtps://$imap_user:$imap_pass@mail.dektech.com.au
 set from=sashan.govender@dektech.com.au
 set use_from=yes
 set ssl_starttls=yes
+set alias_file="~/.mutt/aliases"
+set sort_alias=alias
+set reverse_alias=yes
+set pager_stop=yes
+
+source $alias_file
 
 source ~/.mutt/theme
 
