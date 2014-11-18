@@ -125,6 +125,13 @@ autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 autocmd BufEnter,BufRead *.txt setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=100 foldcolumn=0
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
+"
+"asciidoc autocmd
+autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
+        \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
+        \ textwidth=70 wrap formatoptions=tcqn
+        \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
+        \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=0
