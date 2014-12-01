@@ -5,7 +5,7 @@ sudo pacman -S syslog-ng
 systemctl enable syslog-ng.service
 systemctl restart syslog-ng.service
 sudo pacman -S gcc ghc
-sudo pacman -S xorg xorg-xinit xorg-xclock xorg-twm xmonad dmenu
+sudo pacman -S xorg xorg-xinit xorg-xclock xorg-twm xmonad dmenu xmonad-contrib
 sudo pacman -S cabal-install
 cabal update
 cabal install xmobar
