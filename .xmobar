@@ -11,7 +11,7 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
        , iconRoot = "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run Weather "ESSA" ["-t","<station>: <tempC>C",
+       , commands = [ Run Weather "YMML" ["-t","<station>: <tempC>C",
                                           "-L","18","-H","25",
                                           "--normal","green",
                                           "--high","red",
@@ -26,5 +26,5 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%cpu% | %memory% * %swap% }\
-                    \{ <fc=#ee9a00>%date%</fc>| %ESSA% | %uname%"
+                    \{ <fc=#ee9a00>%date%</fc>| %YMML% | %uname%"
        }

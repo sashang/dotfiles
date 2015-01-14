@@ -30,9 +30,11 @@ set sort_browser=reverse-date
 set text_flowed=yes
 set sort_alias=alias
 set reverse_alias=yes
+set forward_format="%s"
 
 macro index \\f "<tag-pattern> ~x gerritforge | ~L gerrit@lmera\n:set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>=cmw-codereview\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 macro index,pager \\s ":source ~/.mutt/muttrc\n"
+bind index,pager G imap-fetch-mail
 bind pager j next-line
 bind pager k previous-line
 
