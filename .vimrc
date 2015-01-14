@@ -86,6 +86,8 @@ set showmatch
 "disable splash message
 set shortmess+=I
 
+set spelllang=en_gb
+
 "ignore case when searching
 set ignorecase
 
