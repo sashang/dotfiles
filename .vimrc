@@ -25,6 +25,9 @@ else
   colorscheme twilight
 endif
 
+"set dictionaries to use for looking up words online with vim-dict
+let g:dict_hosts = [["dict.org", ["gcide","wn"]]]
+
 "map ; to : for ease of use
 map ; :
 

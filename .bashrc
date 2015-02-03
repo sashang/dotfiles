@@ -42,7 +42,7 @@ export PROMPT_COMMAND='RET=$?;\
     BRANCH="(git not installed)"
   fi;
 
-export PS1="$GREEN\u@\h $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
+export PS1="$GREEN\u@\h:${PURPLE}${SCHROOT_CHROOT_NAME} $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
 
 
 if ls --color 2>/dev/null; then
