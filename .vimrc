@@ -1,16 +1,25 @@
 filetype plugin indent on
 syntax on
-call pathogen#infect()
+set shell=bash
 set nocp
 set dir=/tmp,$HOME/tmp
 set history=100
-call pathogen#infect()
-call pathogen#helptags()
 
 "disable bells
 set noerrorbells novb
 set vb t_vb=
 
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'szw/vim-dict'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
 
 if has("gui_running")
   "set guifont=Comic\ 11
@@ -127,7 +136,6 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd BufEnter,BufRead *.txt setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=100 foldcolumn=0
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
 "
@@ -157,26 +165,6 @@ function! RotateColorscheme()
   endif
   let l:name = s:colorschemes[s:colorscheme_idx]
   execute 'colorscheme '.l:name
-endfunction
-
-function! ChangeProfile(name)
-  if a:name == "opensaf"
-    let l:srcroot = $HOME . '/code/repos/mercurial/opensaf/'
-    let searchpath = l:srcroot . '**'
-    let l:dirs = finddir("include", searchpath, -1)
-    for item in l:dirs
-      let g:clang_user_options .= ' -I'.item 
-      echo item
-    endfor
-    echo g:clang_user_options
-  endif
-endfunction
-
-function! ActivateRainbow()
-    cal rainbow_parentheses#load(0)
-    cal rainbow_parentheses#load(1)
-    cal rainbow_parentheses#load(2)
-    cal rainbow_parentheses#toggle()
 endfunction
 
 "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
