@@ -11,7 +11,6 @@ call pathogen#helptags()
 set noerrorbells novb
 set vb t_vb=
 
-
 if has("gui_running")
   "set guifont=Comic\ 11
   "set guifont=Monospace\ 11
@@ -125,6 +124,8 @@ set foldcolumn=0
 " It's useful to show the buffer number in the status line.
 set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
+" disable prompt to reload file when changed
+autocmd FileChangedShell * echon "" 
 autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd BufEnter,BufRead *.txt setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=100 foldcolumn=0
