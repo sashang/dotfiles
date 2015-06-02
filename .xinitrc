@@ -1,4 +1,4 @@
-session=${1:-xmonad}
+session=${session:-xmonad}
 case $session in
   gnome ) exec gnome-session;;
   openbox ) exec openbox-session;;
