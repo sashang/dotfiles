@@ -1,15 +1,25 @@
-filetype plugin indent on
 syntax on
-call pathogen#infect()
-set nocp
+set shell=bash
 set dir=/tmp,$HOME/tmp
 set history=100
-call pathogen#infect()
-call pathogen#helptags()
 
 "disable bells
 set noerrorbells novb
 set vb t_vb=
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+set nocompatible
+filetype off
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'szw/vim-dict'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
 
 if has("gui_running")
   "set guifont=Comic\ 11
@@ -24,6 +34,7 @@ else
   colorscheme twilight
 endif
 
+filetype plugin indent on
 "set dictionaries to use for looking up words online with vim-dict
 let g:dict_hosts = [["dict.org", ["gcide","wn"]]]
 
@@ -128,14 +139,13 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 autocmd FileChangedShell * echon "" 
 autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
-autocmd BufEnter,BufRead *.txt setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=100 foldcolumn=0
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
 "
 "asciidoc autocmd
-autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
+autocmd BufRead,BufNewFile,BufEnter *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
         \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
-        \ textwidth=70 wrap formatoptions=tcqn
+        \ textwidth=100 wrap formatoptions=tcqn
         \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
         \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
@@ -158,26 +168,6 @@ function! RotateColorscheme()
   endif
   let l:name = s:colorschemes[s:colorscheme_idx]
   execute 'colorscheme '.l:name
-endfunction
-
-function! ChangeProfile(name)
-  if a:name == "opensaf"
-    let l:srcroot = $HOME . '/code/repos/mercurial/opensaf/'
-    let searchpath = l:srcroot . '**'
-    let l:dirs = finddir("include", searchpath, -1)
-    for item in l:dirs
-      let g:clang_user_options .= ' -I'.item 
-      echo item
-    endfor
-    echo g:clang_user_options
-  endif
-endfunction
-
-function! ActivateRainbow()
-    cal rainbow_parentheses#load(0)
-    cal rainbow_parentheses#load(1)
-    cal rainbow_parentheses#load(2)
-    cal rainbow_parentheses#toggle()
 endfunction
 
 "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
