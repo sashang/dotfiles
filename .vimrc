@@ -25,6 +25,7 @@ if has("gui_running")
   "set guifont=Comic\ 11
   "set guifont=Monospace\ 11
   set guifont=inconsolata\ 13
+  set lines=999 columns=999
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
   colorscheme twilight
