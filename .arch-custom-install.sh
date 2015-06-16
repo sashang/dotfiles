@@ -18,4 +18,5 @@ ln -sf "$HOME/code/dotfiles/.bashrc" "$HOME/.bashrc"
 ln -sf "$HOME/code/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$HOME/code/dotfiles/.mutt/muttrc" "$HOME/.mutt/muttrc"
 ln -sf "$HOME/code/dotfiles/.mutt/theme" "$HOME/.mutt/theme"
+ln -sf "$HOME/code/dotfiles/.gitconfig" "$HOME/.gitconfig"
 
