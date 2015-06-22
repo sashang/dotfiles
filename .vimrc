@@ -102,6 +102,9 @@ set spelllang=en_gb
 "ignore case when searching
 set ignorecase
 
+"infer case when using ctrl-n (autocompletion)
+set infercase
+
 "no ignorecase if Uppercase char is present
 set smartcase
 
