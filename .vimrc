@@ -3,9 +3,6 @@ set shell=bash
 set dir=/tmp,$HOME/tmp
 set history=100
 
-"disable bells
-set noerrorbells novb
-set vb t_vb=
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -174,3 +171,7 @@ endfunction
 "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
 "colour. This hack get's rid of it.
 highlight clear Pmenu
+
+"disable bells
+set noerrorbells novb
+set vb t_vb=
