@@ -14,20 +14,27 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'szw/vim-dict'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
 
 if has("gui_running")
-  "set guifont=Comic\ 11
-  "set guifont=Monospace\ 11
   set guifont=inconsolata\ 13
+
+  "force gvim to maximize
   set lines=999 columns=999
+
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
   colorscheme twilight
+
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
+
+  "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
+  "colour. This hack get's rid of it.
+  highlight clear Pmenu
 else
   colorscheme twilight
 endif
@@ -86,6 +93,8 @@ map <c-k> <c-w><c-k>
 "paste whats in the clipboard register (defined by a mouse selection) 
 map <leader>p :set paste<cr>"*p:set nopaste<cr>
 
+"toggle Gundo
+map 
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
@@ -171,9 +180,6 @@ function! RotateColorscheme()
   execute 'colorscheme '.l:name
 endfunction
 
-"change the Pmenu - sometimes depending on colorscheme it is a horrid pink
-"colour. This hack get's rid of it.
-highlight clear Pmenu
 
 "disable bells
 set noerrorbells novb

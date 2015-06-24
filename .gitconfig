@@ -5,3 +5,5 @@
 	name = sashan
 [push]
 	default = matching
+[core]
+	editor = vim

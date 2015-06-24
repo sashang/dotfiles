@@ -1,7 +1,7 @@
 #!/bin/bash
 ## A pacman based 1st time personal environment setup script
 
-package_list="gcc gnome firefox mutt pwsafe ttf-inconsolata ttf-dejavu gvim tmux"
+package_list="gcc firefox mutt pwsafe ttf-inconsolata ttf-dejavu gvim tmux fish"
 sudo pacman -Syu
 sudo pacman -S syslog-ng
 systemctl enable syslog-ng.service
@@ -19,4 +19,4 @@ ln -sf "$HOME/code/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$HOME/code/dotfiles/.mutt/muttrc" "$HOME/.mutt/muttrc"
 ln -sf "$HOME/code/dotfiles/.mutt/theme" "$HOME/.mutt/theme"
 ln -sf "$HOME/code/dotfiles/.gitconfig" "$HOME/.gitconfig"
-
+ln -sf "$HOME/code/dotfiles/.config/fish/functions/fish_prompt.fish" "$HOME/.config/fish/functions/fish_prompt.fish" 
