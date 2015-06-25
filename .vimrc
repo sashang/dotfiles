@@ -94,7 +94,7 @@ map <c-k> <c-w><c-k>
 map <leader>p :set paste<cr>"*p:set nopaste<cr>
 
 "toggle Gundo
-map 
+map <leader>g :GundoToggle<cr>
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
