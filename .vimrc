@@ -27,7 +27,7 @@ if has("gui_running")
 
   "set guifont=Andale\ Mono\:h12
   "set guifont=SerafettinCartoon\ 11
-  colorscheme twilight
+  colorscheme jellybeans
 
   "disable menu, gui etc...who needs a mouse?
   set guioptions=agi
@@ -160,7 +160,7 @@ let g:clang_user_options='-std=c++98'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['jellybeans', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
