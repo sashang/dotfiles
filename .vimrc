@@ -74,11 +74,7 @@ map <leader>e :Vex<cr>
 "start ctrlp Most Recently used buffers
 map <leader>b :CtrlPMRU<cr>
 
-"toggle hilights on search text
-map <leader>h :set hlsearch!<cr>
-map <leader>l :set list!<cr>
 map <leader>e :Vexplore<cr>
-"map <leader>d :bd<cr>
 map <leader>w :botright cwindow<cr>
 map <leader>] :botright ptnext<cr>
 map <leader>[ :botright ptprev<cr>
