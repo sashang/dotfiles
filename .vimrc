@@ -15,6 +15,7 @@ Plugin 'szw/vim-dict'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim.git'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -112,6 +113,7 @@ set smartcase
 
 "don't bother with backup files
 set nobackup
+set noswapfile
 
 "Don't wrap long lines
 set nowrap
