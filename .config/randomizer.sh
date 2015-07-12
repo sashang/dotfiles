@@ -5,7 +5,7 @@
 colors=($(ls $HOME/.config/xcolors/*))
 len=${#colors[@]}
 idx=$(($RANDOM % $len))
-xrdb -override ${colors[$idx]}
+xrdb -merge ${colors[$idx]}
 echo ${colors[$idx]}
 urxvt &
 

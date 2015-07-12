@@ -1,37 +1,37 @@
 !DOOMICIDE darkocean
 !Black
-URxvt.color0:    #000000
-URxvt.color8:    #38372c
+*color0:    #000000
+*color8:    #38372c
 
 !Red
-URxvt.color1:    #571dc2
-URxvt.color9:    #7c54b0
+*color1:    #571dc2
+*color9:    #7c54b0
 
 !Green
-URxvt.color2:    #14db49
-URxvt.color10:    #a2e655
+*color2:    #14db49
+*color10:    #a2e655
 
 !Yellow
-URxvt.color3:    #403d70
-URxvt.color11:    #9C6F59
+*color3:    #403d70
+*color11:    #9C6F59
 
 !Blue
-URxvt.color4:    #385a70
-URxvt.color12:    #323f5c
+*color4:    #385a70
+*color12:    #323f5c
 
 !Magenta
-URxvt.color5:    #384894
-URxvt.color13:    #5e6c99
+*color5:    #384894
+*color13:    #5e6c99
 
 !Cyan
-URxvt.color6:    #4F3A5E
-URxvt.color14:    #667d77
+*color6:    #4F3A5E
+*color14:    #667d77
 
 !White
-URxvt.color7:    #999999
-URxvt.color15:    #ffffff
+*color7:    #999999
+*color15:    #ffffff
 
-Rxvt.colorUL: 9
+*colorUL: 9
 
-URxvt.background: #000000
-URxvt.foreground: #ffffff
+*background: #000000
+*foreground: #ffffff
