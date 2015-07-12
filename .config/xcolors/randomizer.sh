@@ -4,7 +4,7 @@
 
 colors=($(ls *))
 len=${#colors[@]}
-idx=$(($RANDOM%len))
-xrdb -override ${colors[idx]}
+idx=$(($RANDOM % $len))
+xrdb -override ${colors[$idx]}
 urxvt &
 
