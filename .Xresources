@@ -1,23 +1,4 @@
-
-Urxvt.foreground:   #adadad
-Urxvt.background:   #202020
-Urxvt.cursorColor:  #adadad
-Urxvt.color0:       #202020
-Urxvt.color8:       #404040
-Urxvt.color1:       #707070
-Urxvt.color9:       #e72d6a
-Urxvt.color2:       #808080
-Urxvt.color10:      #cf275f
-Urxvt.color3:       #909090
-Urxvt.color11:      #b52253
-Urxvt.color4:       #a0a0a0
-Urxvt.color12:      #2cc9e8
-Urxvt.color5:       #505050
-Urxvt.color13:      #27b3cf
-Urxvt.color6:       #606060
-Urxvt.color14:      #229db5
-Urxvt.color7:       #adadad
-Urxvt.color15:      #e7e7e7
+#include ".config/xcolors/cotton-candy"
 
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
