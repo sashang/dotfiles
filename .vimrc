@@ -36,8 +36,6 @@ if has("gui_running")
   "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
   "colour. This hack get's rid of it.
   highlight clear Pmenu
-else
-  colorscheme twilight
 endif
 
 filetype plugin indent on
@@ -113,6 +111,7 @@ set smartcase
 
 "don't bother with backup files
 set nobackup
+set noswapfile
 
 "Don't wrap long lines
 set nowrap
