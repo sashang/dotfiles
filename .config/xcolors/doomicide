@@ -1,0 +1,37 @@
+!DOOMICIDE darkocean
+!Black
+*color0:    #000000
+*color8:    #38372c
+
+!Red
+*color1:    #571dc2
+*color9:    #7c54b0
+
+!Green
+*color2:    #14db49
+*color10:    #a2e655
+
+!Yellow
+*color3:    #403d70
+*color11:    #9C6F59
+
+!Blue
+*color4:    #385a70
+*color12:    #323f5c
+
+!Magenta
+*color5:    #384894
+*color13:    #5e6c99
+
+!Cyan
+*color6:    #4F3A5E
+*color14:    #667d77
+
+!White
+*color7:    #999999
+*color15:    #ffffff
+
+*colorUL: 9
+
+*background: #000000
+*foreground: #ffffff
