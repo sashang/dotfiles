@@ -16,6 +16,7 @@ Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim.git'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bruno-/vim-man'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
