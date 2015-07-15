@@ -6,6 +6,7 @@ set header_cache=~/.mutt/cache
 set certificate_file=~/.mutt/certs
 unset imap_passive
 set imap_keepalive=300
+set mailcap_path=~/.mutt/mailcap
 set mail_check=30
 set alias_file="~/.mutt/aliases"
 set sort_alias=alias
@@ -27,6 +28,9 @@ macro index,pager \\s ":source ~/.mutt/muttrc\n"
 bind index,pager G imap-fetch-mail
 bind pager j next-line
 bind pager k previous-line
+
+auto_view text/html
+alternative_order text/plain text/html
 
 source ~/.mutt/theme
 source $alias_file
