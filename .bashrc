@@ -31,18 +31,24 @@ LIGHT_PURPLE="\[\033[1;35m\]"
 YELLOW="\[\033[1;33m\]"
 WHITE="\[\033[1;37m\]"
 export PROMPT_COMMAND='RET=$?;\
-  BRANCH="";\
-  ERRMSG="";\
-  if [[ $RET != 0 ]]; then\
-    ERRMSG=" $RET";\
-  fi;\
-  if which git 2>/dev/null 1>/dev/null; then\
-    BRANCH=$(git branch 2>/dev/null | grep \* |  cut -d " " -f 2);\
-  else
-    BRANCH="(git not installed)"
-  fi;
+    SLASH_COUNT=$(pwd | grep -o "/" | wc -l);\
+    if [[ $SLASH_COUNT < 4 ]]; then\
+        PARTIAL_PWD=$(pwd);\
+    else\
+        PARTIAL_PWD=$(pwd | cut -d "/" -f $((SLASH_COUNT-1))-);\
+    fi;\
+    BRANCH="";\
+    ERRMSG="";\
+    if [[ $RET != 0 ]]; then\
+        ERRMSG=" $RET";\
+    fi;\
+    if which git &>/dev/null; then\
+        BRANCH=$(git branch 2>/dev/null | grep \* |  cut -d " " -f 2);\
+    else\
+        BRANCH="(git not installed)";\
+    fi;
 
-export PS1="$GREEN\u@\h:${PURPLE}${SCHROOT_CHROOT_NAME} $BLUE\W $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
+export PS1="$GREEN\u@\h:${PURPLE}${SCHROOT_CHROOT_NAME} $BLUE${PARTIAL_PWD} $CYAN$BRANCH$RED$ERRMSG \$ $LIGHT_GRAY";'
 
 
 if ls --color 2>/dev/null; then

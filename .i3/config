@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec '/home/sashan/bin/randomizer.sh'
 
+#display the time
+bindsym $mod+F1 exec '/usr/bin/zenity --info --text=sadas --title=Date'
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
