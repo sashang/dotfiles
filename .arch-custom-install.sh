@@ -1,7 +1,8 @@
 #!/bin/bash
 ## A pacman based 1st time personal environment setup script
 
-package_list="gcc git firefox mutt pwsafe ttf-inconsolata ttf-dejavu gvim tmux fish"
+package_list="gcc git firefox mutt pwsafe ttf-inconsolata ttf-dejavu vim tmux \
+    fish network-manager-applet openvpn i3-wm rxvt-unincode"
 sudo pacman -Syu
 sudo pacman -S syslog-ng
 systemctl enable syslog-ng.service
@@ -24,4 +25,5 @@ ln -sf "$HOME/code/dotfiles/.mutt/theme" "$HOME/.mutt/theme"
 ln -sf "$HOME/code/dotfiles/.gitconfig" "$HOME/.gitconfig"
 ln -sf "$HOME/code/dotfiles/.config/fish/functions/fish_prompt.fish" "$HOME/.config/fish/functions/fish_prompt.fish"
 ln -sf "$HOME/code/dotfiles/.config/fish/config.fish" "$HOME/.config/fish/functions/config.fish"
+ln -sf "$HOME/code/dotfiles/.config/xcolors" "$HOME/.config/xcolors"
 
