@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id nm-applet
 set $mod Mod1
+exec xrdb -merge ~/.Xresources
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -30,10 +31,11 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec '/home/sashan/bin/randomizer.sh'
+bindsym $mod+Return exec 'urxvt'
 
 #display the time
-bindsym $mod+F1 exec '/usr/bin/zenity --info --text=sadas --title=Date'
+#/usr/bin/zenity --info --text=sadas --title=Date
+#bindsym $mod+f1 exec 'gvim'
 
 # kill focused window
 bindsym $mod+Shift+q kill
