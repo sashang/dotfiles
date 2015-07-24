@@ -32,7 +32,7 @@ bind pager k previous-line
 auto_view text/html
 alternative_order text/plain text/html
 
-source ~/.mutt/theme
+source ~/.mutt/solarized-dark-16
 source $alias_file
 
 source ~/.mutt/dektech
