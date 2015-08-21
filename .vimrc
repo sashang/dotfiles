@@ -53,6 +53,9 @@ set incsearch
 "This carries the indent from the previous line onto the next line
 set autoindent
 
+"make life easy
+nmap ; :
+
 "toggle show list (shows whitespace characters)
 map <leader>l :set list!<cr> 
 

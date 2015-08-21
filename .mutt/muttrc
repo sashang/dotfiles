@@ -23,7 +23,7 @@ set forward_format="%s"
 set ssl_verify_host=no
 set ssl_verify_dates=no
 set date_format="!%a, %b %d, %Y at %R:%M:%S%p %Z"
-set index_format="%4C %Z %d %-15.15L %s"
+set index_format="%4C %Z %D %-15.15L %s"
 
 macro index \\f "<tag-pattern> ~x gerritforge | ~L gerrit@lmera\n:set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>=cmw-codereview\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 macro index,pager \\s ":source ~/.mutt/muttrc\n"
@@ -32,7 +32,7 @@ bind pager j next-line
 bind pager k previous-line
 
 auto_view text/html
-alternative_order text/plain text/html
+alternative_order text/html text/plain
 
 source ~/.mutt/solarized-dark-16
 source $alias_file
