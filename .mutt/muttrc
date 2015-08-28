@@ -32,7 +32,7 @@ bind pager j next-line
 bind pager k previous-line
 
 auto_view text/html
-alternative_order text/plain text/html
+alternative_order text/html text/plain
 
 source ~/.mutt/solarized-dark-16
 source $alias_file
