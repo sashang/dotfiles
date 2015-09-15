@@ -59,3 +59,6 @@ fi
 
 alias less="less -Ri"
 
+export CC="ccache gcc"
+export CXX="ccache g++"
+
