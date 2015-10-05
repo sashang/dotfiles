@@ -18,6 +18,8 @@ Plugin 'sjl/gundo.vim.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'stargrave/gerrvim'
+Plugin 'vim-scripts/OmniCppComplete'
+Plugin 'JuliaLang/julia-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
