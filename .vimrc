@@ -80,6 +80,8 @@ map <leader>e :Vex<cr>
 "start ctrlp Most Recently used buffers
 map <leader>b :CtrlPMRU<cr>
 
+"force reload of buffer from file
+map <leader>r :edit!<cr>
 map <leader>e :Vexplore<cr>
 map <leader>w :botright cwindow<cr>
 map <leader>] :botright ptnext<cr>
