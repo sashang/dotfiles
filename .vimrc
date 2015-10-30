@@ -77,6 +77,9 @@ map <leader>s :source ~/.vimrc<cr>
 "Open the directory browser that the current windowed file is in
 map <leader>e :Vex<cr>
 
+"generate tags file
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++ src/ opensaf/<CR>
+
 "start ctrlp Most Recently used buffers
 map <leader>b :CtrlPMRU<cr>
 

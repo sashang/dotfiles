@@ -58,7 +58,19 @@ else
 fi
 
 alias less="less -Ri"
-export CC="ccache gcc"
-export CXX="ccache g++"
 
+case ${SCHROOT_CHROOT_NAME} in
+"rhel6.7")
+    export CC="gcc"
+    export CXX="g++"
+    ;;
+"sles12")
+    export CC="ccache gcc"
+    export CXX="ccache g++"
+    ;;
+*)
+    export CC="ccache gcc"
+    export CXX="ccache g++"
+    ;;
+esac
 
