@@ -1,7 +1,7 @@
 set editor=vim
 lists gerrit@lmera.ericsson.se opensaf-users@lists.sourceforge.net
 subscribe gerrit@lmera.ericsson.se opensaf-users@lists.sourceforge.net
-set message_cachedir=~/.mutt/cache
+set message_cachedir=~/.mutt/cachedir
 set header_cache=~/.mutt/cache
 set certificate_file=~/.mutt/certs
 unset imap_passive
