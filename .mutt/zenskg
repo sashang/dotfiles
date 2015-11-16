@@ -1,0 +1,11 @@
+set imap_user=sashan
+set imap_pass=$my_zenskg_pass
+set folder=imaps://mx.zenskg.net/
+set spoolfile=+INBOX
+mailboxes =INBOX
+set record = +Sent
+set from=sashan@zenskg.net
+set realname = 'sashan'
+set smtp_url=smtp://$imap_user:$imap_pass@mx.zenskg.net:587/
+set ssl_starttls=yes
+set ssl_force_tls=yes
