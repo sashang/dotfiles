@@ -26,7 +26,8 @@ set date_format="!%a, %b %d, %Y at %R:%M:%S%p %Z"
 set index_format="%4C %Z %D %-15.15L %s"
 
 macro index \\f "<tag-pattern> ~x gerritforge | ~L gerrit@lmera\n:set confirmappend=no delete=yes\n\
-<tag-prefix-cond><save-message>=cmw-codereview\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n<tag-pattern> ~s \"Jenkins build is\" | ~s \"Build failed in Jenkins\"\n\
+<tag-prefix-cond><save-message>=cmw-codereview\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n\
+<tag-pattern> ~s \"Jenkins build became\" | ~s \"Jenkins build is\" | ~s \"Build failed in Jenkins\"\n\
 :set confirmappend=no delete=yes\n<tag-prefix-cond><save-message>=cmw-jenkins\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 macro index,pager \\s ":source ~/.mutt/muttrc\n"
 bind index,pager G imap-fetch-mail
@@ -39,9 +40,9 @@ alternative_order text/html text/plain
 source ~/.mutt/solarized-dark-16
 source $alias_file
 
-source ~/.mutt/dektech
-#folder-hook $folder 'source ~/.mutt/dektech'
-
+set my_zenskg_pass=`lpass show --password zenskg.net`
+set my_dektech_pass=`lpass show --password mail.dektech.com.au`
+folder-hook 'dektech.com.au' 'source ~/.mutt/dektech'
+folder-hook 'zenskg.net' 'source ~/.mutt/zenskg'
 #source ~/.mutt/zenskg
-#folder-hook sashan@zenskg.net 'source ~/.mutt/zenskg'
-
+source ~/.mutt/dektech
