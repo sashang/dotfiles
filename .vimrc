@@ -138,8 +138,7 @@ set softtabstop=4
 "allow the cursor free range of movement in all modes (visual, insert etc..)
 set virtualedit=block
 
-"Insert newline after 80 characters
-set textwidth=80
+set textwidth=100
 
 "Give the status line a line of it's own so it's not shared with the command 
 "line
@@ -152,7 +151,7 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " disable prompt to reload file when changed
 autocmd FileChangedShell * echon "" 
-autocmd BufEnter,BufRead *mutt-* set textwidth=80 formatoptions=taqw nopaste
+autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
