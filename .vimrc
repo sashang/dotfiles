@@ -20,6 +20,7 @@ Plugin 'bruno-/vim-man'
 Plugin 'stargrave/gerrvim'
 Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'git://github.com/Rip-Rip/clang_complete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
