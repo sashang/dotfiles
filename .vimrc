@@ -13,12 +13,11 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'szw/vim-dict'
 Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sjl/gundo.vim.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'stargrave/gerrvim'
-Plugin 'vim-scripts/OmniCppComplete'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'git://github.com/Rip-Rip/clang_complete'
 
@@ -164,11 +163,16 @@ autocmd BufRead,BufNewFile,BufEnter *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES
         \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
         \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
+"ctrlp customization
+let g:ctrlp_by_filename = 1
+let g:ctrlp_working_path_mode = 'rwa'
+
+"clang customization
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=0
 let g:clang_debug=0
 "let g:clang_user_options='-fblocks -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300'
-let g:clang_user_options='-std=c++98'
+"let g:clang_user_options='-std=c++98'
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
