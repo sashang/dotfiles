@@ -59,7 +59,7 @@ set autoindent
 nmap ; :
 
 "toggle show list (shows whitespace characters)
-map <leader>l :set list!<cr> 
+map <leader>l :set list!<cr>
 
 "toggle highlight search
 map <leader>h :set hlsearch!<cr> 
@@ -70,14 +70,13 @@ map <leader>d :bd!<cr>
 "map \f to format paragraph
 map <leader>f vapgq<cr>
 
-
 "map \s to loading the vimrc file
 map <leader>s :source ~/.vimrc<cr>
 
 "Open the directory browser that the current windowed file is in
 map <leader>e :Vex<cr>
 
-"generate tags file
+"generate tags for coremw 
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++ src/ opensaf/<CR>
 
 "start ctrlp Most Recently used buffers
@@ -156,15 +155,9 @@ autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
 "autocmd BufEnter *.java set noexpandtab textwidth=0
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
 "
-"asciidoc autocmd
-autocmd BufRead,BufNewFile,BufEnter *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
-        \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
-        \ textwidth=100 wrap formatoptions=tcqn
-        \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
-        \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
 
 "ctrlp customization
-let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 0
 let g:ctrlp_working_path_mode = 'rwa'
 
 "clang customization
@@ -189,6 +182,23 @@ function! RotateColorscheme()
   execute 'colorscheme '.l:name
 endfunction
 
+function! AutoreconfCoreMW()
+    cd $HOME/code/coremw
+    execute '!autoreconf -fvi'
+endfunction
+
+function! ConfigureCoreMW()
+    cd $HOME/code/coremw
+    execute '!schroot -u sashan -c sles12 -d $HOME/code/coremw/build-sles12 -- ../configure'
+endfunction
+
+function! MakeCoreMWSLES12()
+    let s:temp = &makeprg
+    echo 'temp='.s:temp
+    let &makeprg = 'schroot -u sashan -c sles12 -d $HOME/code/coremw/build-sles12 -- make'
+    execute 'make'
+    let &makeprg = s:temp
+endfunction
 
 "disable bells
 set noerrorbells novb

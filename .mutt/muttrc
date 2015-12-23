@@ -25,12 +25,8 @@ set ssl_verify_dates=no
 set date_format="!%a, %b %d, %Y at %R:%M:%S%p %Z"
 set index_format="%4C %Z %D %-15.15L %s"
 
-macro index \\f "<tag-pattern> ~x gerritforge | ~L gerrit@lmera\n:set confirmappend=no delete=yes\n\
-<tag-prefix-cond><save-message>=cmw-codereview\n<sync-mailbox>\n\
-<tag-pattern> ~s \"Jenkins build is\" | ~s \"Build failed in Jenkins\"\n\
+macro index \\f "<tag-pattern> ~s \"Jenkins build\" | ~s \"Build failed in Jenkins\"\n:set confirmappend=no delete=yes\n\
 <tag-prefix-cond><save-message>=cmw-jenkins\n<sync-mailbox>\n\
-<tag-pattern> ~L opensaf-devel\n\
-<tag-prefix-cond><save-message>=opensaf-devel\n<sync-mailbox>\n\
 :set confirmappend=yes delete=ask-yes\n"
 macro index,pager \\s ":source ~/.mutt/muttrc\n"
 bind index,pager G imap-fetch-mail
