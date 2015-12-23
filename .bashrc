@@ -61,8 +61,8 @@ alias less="less -Ri"
 
 case ${SCHROOT_CHROOT_NAME} in
 "rhel6.7")
-    export CC="gcc"
-    export CXX="g++"
+    export CC="/opt/gcc/bin/gcc"
+    export CXX="/opt/gcc/bin/g++"
     ;;
 "sles12")
     export CC="ccache gcc"
