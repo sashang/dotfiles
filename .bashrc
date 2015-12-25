@@ -74,3 +74,5 @@ case ${SCHROOT_CHROOT_NAME} in
     ;;
 esac
 
+source $HOME/.local.sh
+

@@ -21,7 +21,7 @@ Plugin 'stargrave/gerrvim'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'git://github.com/Rip-Rip/clang_complete'
 
-" All of your Plugins must be added before the following line
+" All plugins must be added before the following line
 call vundle#end()
 
 if has("gui_running")
@@ -57,47 +57,48 @@ set autoindent
 
 "make life easy
 nmap ; :
+vmap ; :
 
 "toggle show list (shows whitespace characters)
-map <leader>l :set list!<cr>
+nmap <leader>l :set list!<cr>
 
 "toggle highlight search
-map <leader>h :set hlsearch!<cr> 
+nmap <leader>h :set hlsearch!<cr>
 
-"map \d to deleting buffers
-map <leader>d :bd!<cr>
+"nmap \d to deleting buffers
+nmap <leader>d :bd!<cr>
 
-"map \f to format paragraph
-map <leader>f vapgq<cr>
+"nmap \f to format paragraph
+nmap <leader>f vapgq<cr>
 
-"map \s to loading the vimrc file
-map <leader>s :source ~/.vimrc<cr>
+"nmap \s to loading the vimrc file
+nmap <leader>s :source ~/.vimrc<cr>
 
 "Open the directory browser that the current windowed file is in
-map <leader>e :Vex<cr>
+nmap <leader>e :Vex<cr>
 
-"generate tags for coremw 
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++ src/ opensaf/<CR>
+"generate tags for coremw
+nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++ src/ opensaf/<CR>
 
 "start ctrlp Most Recently used buffers
-map <leader>b :CtrlPMRU<cr>
+nmap <leader>b :CtrlPMRU<cr>
 
 "force reload of buffer from file
-map <leader>r :edit!<cr>
-map <leader>e :Vexplore<cr>
-map <leader>w :botright cwindow<cr>
-map <leader>] :botright ptnext<cr>
-map <leader>[ :botright ptprev<cr>
-map <leader>m :bufdo update<cr>:make -w<cr>
-map <c-h> <c-w><c-h>
-map <c-l> <c-w><c-l>
-map <c-j> <c-w><c-j>
-map <c-k> <c-w><c-k>
-"paste whats in the clipboard register (defined by a mouse selection) 
-map <leader>p :set paste<cr>"*p:set nopaste<cr>
+nmap <leader>r :edit!<cr>
+nmap <leader>e :Vexplore<cr>
+nmap <leader>w :botright cwindow<cr>
+nmap <leader>] :botright ptnext<cr>
+nmap <leader>[ :botright ptprev<cr>
+nmap <leader>m :bufdo update<cr>:make -w<cr>
+nmap <c-h> <c-w><c-h>
+nmap <c-l> <c-w><c-l>
+nmap <c-j> <c-w><c-j>
+nmap <c-k> <c-w><c-k>
+"paste whats in the clipboard register (defined by a mouse selection)
+nmap <leader>p :set paste<cr>"*p:set nopaste<cr>
 
 "toggle Gundo
-map <leader>g :GundoToggle<cr>
+nmap <leader>g :GundoToggle<cr>
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
@@ -127,7 +128,7 @@ set noswapfile
 "Don't wrap long lines
 set nowrap
 
-"Convert tabs to spaces 
+"Convert tabs to spaces
 set expandtab
 
 set tabstop=4
@@ -139,7 +140,7 @@ set virtualedit=block
 
 set textwidth=100
 
-"Give the status line a line of it's own so it's not shared with the command 
+"Give the status line a line of it's own so it's not shared with the command
 "line
 set laststatus=2
 
@@ -170,36 +171,22 @@ let g:clang_debug=0
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
 let s:colorschemes = ['jellybeans', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
-      \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum']
+      \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum', 'freya']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
 function! RotateColorscheme()
-  let s:colorscheme_idx += 1
-  if s:colorscheme_idx >= len(s:colorschemes)
-    let s:colorscheme_idx = 0
-  endif
-  let l:name = s:colorschemes[s:colorscheme_idx]
-  execute 'colorscheme '.l:name
+    let s:colorscheme_idx += 1
+    if s:colorscheme_idx >= len(s:colorschemes)
+        let s:colorscheme_idx = 0
+    endif
+    let l:name = s:colorschemes[s:colorscheme_idx]
+    execute 'colorscheme '.l:name
 endfunction
 
-function! AutoreconfCoreMW()
-    cd $HOME/code/coremw
-    execute '!autoreconf -fvi'
-endfunction
-
-function! ConfigureCoreMW()
-    cd $HOME/code/coremw
-    execute '!schroot -u sashan -c sles12 -d $HOME/code/coremw/build-sles12 -- ../configure'
-endfunction
-
-function! MakeCoreMWSLES12()
-    let s:temp = &makeprg
-    echo 'temp='.s:temp
-    let &makeprg = 'schroot -u sashan -c sles12 -d $HOME/code/coremw/build-sles12 -- make'
-    execute 'make'
-    let &makeprg = s:temp
-endfunction
 
 "disable bells
 set noerrorbells novb
 set vb t_vb=
+
+source $HOME/code/vim-chroot-build/vim-chroot-build.vim
+
