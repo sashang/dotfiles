@@ -35,7 +35,7 @@ URxvt.scrollBar_right: true
 ! URxvt*cursorUnderline:                boolean
 ! URxvt*cursorBlink:                    boolean
 ! URxvt*pointerBlank:                   boolean
-URxvt*background: [95]#000000
+URxvt*background: [50]#000000
 ! URxvt*foreground:                     color
 ! URxvt*color0:                         color
 ! URxvt*color1:                         color
@@ -68,7 +68,7 @@ URxvt*background: [95]#000000
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt.font: xft:inconsolata:size=12
+URxvt.font: xft:monaco:size=10
 ! URxvt*boldFont:                       fontname
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
