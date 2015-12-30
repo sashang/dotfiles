@@ -25,21 +25,23 @@ Plugin 'git://github.com/Rip-Rip/clang_complete'
 call vundle#end()
 
 if has("gui_running")
-  set guifont=inconsolata\ 13
+    set guifont=inconsolata\ 13
 
-  "force gvim to maximize
-  set lines=999 columns=999
+    "force gvim to maximize
+    set lines=999 columns=999
 
-  "set guifont=Andale\ Mono\:h12
-  "set guifont=SerafettinCartoon\ 11
-  colorscheme jellybeans
+    "set guifont=Andale\ Mono\:h12
+    "set guifont=SerafettinCartoon\ 11
+    colorscheme jellybeans
 
-  "disable menu, gui etc...who needs a mouse?
-  set guioptions=agi
+    "disable menu, gui etc...who needs a mouse?
+    set guioptions=agi
 
-  "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
-  "colour. This hack get's rid of it.
-  highlight clear Pmenu
+    "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
+    "colour. This hack get's rid of it.
+    highlight clear Pmenu
+else
+    hi Normal ctermbg=None
 endif
 
 filetype plugin indent on
