@@ -36,7 +36,7 @@ bind pager k previous-line
 auto_view text/html
 alternative_order text/html text/plain
 
-source ~/.mutt/solarized-light-256
+source ~/.mutt/theme
 source $alias_file
 
 set my_zenskg_pass=`lpass show --password zenskg.net`

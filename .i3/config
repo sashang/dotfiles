@@ -4,8 +4,10 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
 
+exec feh --bg-scale ~/Pictures/impossible-geometry.jpg
 # set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
+workspace_layout tabbed
+
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 2
@@ -55,7 +57,7 @@ bindsym $mod+Shift+Print exec notify-send 'selection will be saved to ~/Screensh
 #bindsym $mod+Shift+h exec qpdfview i3_help.pdf
 bindsym $mod+Ctrl+x exec xkill
 
-# focus_follows_mouse no
+focus_follows_mouse no
 
 # change focus
 bindsym $mod+h focus left
@@ -221,10 +223,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym odiaeresis resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
