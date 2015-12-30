@@ -4,7 +4,7 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod1
 
-exec feh --bg-scale ~/Pictures/impossible-geometry.jpg
+exec feh --bg-scale ~/Pictures/wallpaper
 # set default desktop layout (default is tiling)
 workspace_layout tabbed
 
@@ -29,13 +29,13 @@ font xft:monaco:size=10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+F2 exec --no-startup-id dmenu_recency
+bindsym $mod+F2 exec --no-startup-id dmenu_run
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10 && exec notify-send 'brightness up'
