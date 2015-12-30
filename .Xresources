@@ -35,7 +35,7 @@ URxvt.scrollBar_right: true
 ! URxvt*cursorUnderline:                boolean
 ! URxvt*cursorBlink:                    boolean
 ! URxvt*pointerBlank:                   boolean
-URxvt*background: [50]#000000
+URxvt*background: [75]#000000
 ! URxvt*foreground:                     color
 ! URxvt*color0:                         color
 ! URxvt*color1:                         color
