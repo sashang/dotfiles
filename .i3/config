@@ -4,6 +4,7 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
+exec ~/code/dotfiles/random-wallpaper.sh
 exec feh --bg-scale ~/Pictures/wallpaper
 # set default desktop layout (default is tiling)
 workspace_layout tabbed
