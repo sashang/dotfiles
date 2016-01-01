@@ -2,7 +2,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod1
+set $mod Mod4
 
 exec feh --bg-scale ~/Pictures/wallpaper
 # set default desktop layout (default is tiling)
@@ -113,6 +113,9 @@ bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# focus the parent container
+bindsym $mod+d focus child
 
 # Workspace names
 # set $ws1 1:
@@ -249,9 +252,9 @@ bar {
 #	wheel_down_cmd nop
 	font pango:Cantarell,Icons 9
 	colors {
-		separator #2ECC71
+		separator #AAAAAA
 		background #000000
-		statusline #DDDDDD
+		statusline #00A5FF
 		focused_workspace #FFFFFF #2ECC71 #000000
 		active_workspace #000000 #A4A28D #FFFFFF
 		inactive_workspace #A4A28D #000000 #DDDDDD
