@@ -19,7 +19,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'stargrave/gerrvim'
 Plugin 'JuliaLang/julia-vim'
-Plugin 'git://github.com/Rip-Rip/clang_complete'
+" Plugin 'git://github.com/Rip-Rip/clang_complete'
+Plugin 'vim-scripts/OmniCppComplete.git'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -154,7 +155,7 @@ set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " disable prompt to reload file when changed
 autocmd FileChangedShell * echon "" 
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
-autocmd BufRead,BufNewFile,BufEnter $HOME/code/linux/**/*.[hc] setlocal noexpandtab tabstop=8 softtabstop=8 shiftwidth=8 textwidth=80
+autocmd BufRead,BufNewFile,BufEnter $HOME/code/linux/**/*.[hc],Kconfig setlocal noexpandtab tabstop=8 softtabstop=8 shiftwidth=8 textwidth=80
 autocmd BufRead,BufNewFile,BufEnter *.asciidoc
      \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
      \ textwidth=100 wrap formatoptions=tcqn

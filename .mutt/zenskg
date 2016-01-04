@@ -1,5 +1,5 @@
 set imap_user=sashan
-set imap_pass=$my_zenskg_pass
+set imap_pass==`lpass show --password mx.zenskg.net`
 set folder=imaps://mx.zenskg.net/
 set spoolfile=+INBOX
 mailboxes =INBOX
