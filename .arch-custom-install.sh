@@ -1,7 +1,7 @@
 #!/bin/bash
 ## A pacman based 1st time personal environment setup script
 
-cat << EOF >> /etc/pacman.conf
+cat << "EOF" >> /etc/pacman.conf
 [infinality-bundle]
 Server = http://bohoomil.com/repo/$arch
 
