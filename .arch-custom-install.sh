@@ -14,7 +14,7 @@ EOF
 
 package_list="gcc git firefox mutt pwsafe ttf-inconsolata ttf-dejavu vim tmux \
     fish network-manager-applet openvpn i3-wm rxvt-unincode feh scrot \
-    xorg inifinility-bundle xorg-xinit vim-jellybeans ctags xautolock"
+    xorg inifinality-bundle xorg-xinit vim-jellybeans ctags xautolock"
 sudo pacman -Syu
 sudo pacman -S syslog-ng
 systemctl enable syslog-ng.service
