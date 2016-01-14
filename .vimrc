@@ -1,8 +1,17 @@
+
+function! SetFont()
+    let res=system('xrandr | egrep "\*" | cut -f 4 -d " "')
+    if res =~ "2560x1440"
+        set guifont=inconsolata\ 14
+    else
+        set guifont=inconsolata\ 13
+    endif
+endfunction
+
 syntax on
 set shell=bash
 set dir=/tmp,$HOME/tmp
 set history=100
-
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -26,7 +35,6 @@ Plugin 'vim-scripts/OmniCppComplete.git'
 call vundle#end()
 
 if has("gui_running")
-    set guifont=inconsolata\ 13
 
     "force gvim to maximize
     set lines=999 columns=999
@@ -41,6 +49,8 @@ if has("gui_running")
     "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
     "colour. This hack get's rid of it.
     highlight clear Pmenu
+
+    call SetFont()
 else
     hi Normal ctermbg=None
 endif
