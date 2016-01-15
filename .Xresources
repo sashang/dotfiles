@@ -130,4 +130,4 @@ URxvt*depth: 32
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
-#include ".config/xcolors/cotton-candy"
+#include ".config/xcolors/astromouse"
