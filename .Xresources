@@ -67,7 +67,7 @@ URxvt*background: [80]#000000
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt.font: xft:inconsolata:size=12
+URxvt.font: xft:inconsolata:size=13
 ! URxvt*boldFont:                       fontname
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
