@@ -1,3 +1,4 @@
+set my_dektech_pass=`lpass show --password mail.dektech.com.au`
 set imap_user=sashan.govender
 set imap_pass=$my_dektech_pass
 set folder=imaps://mail.dektech.com.au/
@@ -8,3 +9,5 @@ set from=sashan.govender@dektech.com.au
 set realname = 'Sashan Govender'
 set smtp_url=smtps://$imap_user:$imap_pass@mail.dektech.com.au
 set ssl_starttls=yes
+source ~/.mutt/muttrc
+

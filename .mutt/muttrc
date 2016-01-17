@@ -36,12 +36,5 @@ bind pager k previous-line
 auto_view text/html
 alternative_order text/html text/plain
 
-source ~/.mutt/theme
+source ~/.mutt/vombatidae
 source $alias_file
-macro index <f2> '<change-folder>imaps://mx.zenskg.net<enter>'
-macro index <f3> '<change-folder>imaps://mail.dektech.com.au<ENTER>'
-set my_dektech_pass=`lpass show --password mail.dektech.com.au`
-folder-hook 'mail.dektech.com.au' 'source ~/.mutt/dektech'
-folder-hook 'mx.zenskg.net' 'source ~/.mutt/zenskg'
-#source ~/.mutt/zenskg
-source ~/.mutt/dektech
