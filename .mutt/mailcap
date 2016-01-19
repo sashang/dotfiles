@@ -1,4 +1,4 @@
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/html; vimprobable2 %s; needsterminal
 image/png; eog %s
 image/gif; eog %s
 image/jpeg; eog %s

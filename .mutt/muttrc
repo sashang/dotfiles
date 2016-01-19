@@ -1,6 +1,6 @@
 set editor=vim
-lists gerrit@lmera.ericsson.se opensaf-users@lists.sourceforge.net opensaf-devel@lists.sourceforge.net
-subscribe gerrit@lmera.ericsson.se opensaf-users@lists.sourceforge.net opensaf-devel@lists.sourceforge.net
+lists gerrit@lmera.ericsson.se opensaf-users@lists.sourceforge.net opensaf-devel@lists.sourceforge.net linux-usb@vger.kernel.org
+subscribe gerrit@lmera.ericsson.se opensaf-users@lists.sourceforge.net opensaf-devel@lists.sourceforge.net linux-usb@vger.kernel.org
 set message_cachedir=~/.mutt/cachedir
 set header_cache=~/.mutt/cache
 set certificate_file=~/.mutt/certs
@@ -34,7 +34,7 @@ bind pager j next-line
 bind pager k previous-line
 
 auto_view text/html
-alternative_order text/html text/plain
+alternative_order text/plain text/html
 
 source ~/.mutt/vombatidae
 source $alias_file
