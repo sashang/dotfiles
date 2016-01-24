@@ -160,7 +160,7 @@ set laststatus=2
 set foldcolumn=0
 
 " It's useful to show the buffer number in the status line.
-set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+" set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " disable prompt to reload file when changed
 autocmd FileChangedShell * echon "" 
