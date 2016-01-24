@@ -13,8 +13,9 @@ cp System.map /boot/System.map
 
 cat << EOF > /boot/loader/entries/linux-${LOCALVERSION}.conf
 title linux-${LOCALVERSION}
-linux /${KERNEL_NAME}
+initrd /intel-ucode.img
 initrd /${INITRAMFS_NAME}
+linux /${KERNEL_NAME}
 options root=PARTUUID=42724dca-9b89-447d-826d-67a79fe6b861 rw nomodeset nouveau.modeset=0
 EOF
 
