@@ -30,7 +30,7 @@ Plugin 'stargrave/gerrvim'
 Plugin 'JuliaLang/julia-vim'
 " Plugin 'git://github.com/Rip-Rip/clang_complete'
 Plugin 'vim-scripts/OmniCppComplete.git'
-
+Plugin 'chriskempson/base16-vim'
 " All plugins must be added before the following line
 call vundle#end()
 
