@@ -2,14 +2,14 @@
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
 ! URxvt*reverseVideo:                   boolean
-! URxvt*loginShell:                     boolean
+URxvt*loginShell: true
 ! URxvt*multiClickTime:                 number
 ! URxvt*jumpScroll:                     boolean
 ! URxvt*skipScroll:                     boolean
 ! URxvt*pastableTabs:                   boolean
 ! URxvt*scrollstyle:                    mode
 URxvt.scrollBar: false
-URxvt.scrollBar_right: true
+! URxvt.scrollBar_right: true
 ! URxvt*scrollBar_floating:             boolean
 ! URxvt*scrollBar_align:                mode
 ! URxvt*thickness:                      number
@@ -67,7 +67,7 @@ URxvt*background: [80]#000000
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt.font: xft:inconsolata:size=13
+URxvt.font: xft:inconsolata:size=13:antialias=true
 ! URxvt*boldFont:                       fontname
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
@@ -78,7 +78,7 @@ URxvt.font: xft:inconsolata:size=13
 ! URxvt*imFont:                         fontname
 ! URxvt*title:                          string
 ! URxvt*iconName:                       string
-! URxvt*saveLines:                      number
+URxvt*saveLines: 5000
 ! URxvt*buffered:                       boolean
 URxvt*depth: 32
 ! URxvt*visual:                         number
