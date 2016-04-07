@@ -62,6 +62,9 @@ let g:dict_hosts = [["dict.org", ["gcide","wn"]]]
 "allow switching between buffers that have not been written yet - by default vim prohibits this
 set hidden
 
+"turn of two spaces after period
+set nojs
+
 "incremental search
 set incsearch
 
