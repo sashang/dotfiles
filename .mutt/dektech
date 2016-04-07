@@ -2,7 +2,7 @@ set imap_pass=`lpass show --password mail.dektech.com.au`
 set imap_user=sashan.govender
 set folder=imaps://mail.dektech.com.au/
 set spoolfile=+INBOX
-mailboxes =INBOX =Sent =cmw-codereview =cmw-jenkins =opensaf-devel
+mailboxes =INBOX =Sent =cmw-codereview =cmw-jenkins =opensaf-devel =lctlut
 set record = +Sent
 set from=sashan.govender@dektech.com.au
 set realname = 'Sashan Govender'
