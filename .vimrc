@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'stargrave/gerrvim'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'elixir-lang/vim-elixir'
 " Plugin 'git://github.com/Rip-Rip/clang_complete'
 Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
@@ -94,7 +95,7 @@ nmap <leader>s :source ~/.vimrc<cr>
 nmap <leader>e :Vex<cr>
 
 "generate tags for coremw
-nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c++ src/ opensaf/<CR>
+nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c,c++ src/ opensaf/<CR>
 
 "start ctrlp Most Recently used buffers
 nmap <leader>b :CtrlPMRU<cr>
