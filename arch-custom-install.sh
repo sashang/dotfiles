@@ -27,7 +27,6 @@ sudo pacman --noconfirm -S $package_list
 [ -z "$HOME/.mutt/" ] || mkdir -p "$HOME/.mutt"
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-git clone git@github.com:sashang/dotfiles.git ~/code/dotfiles
 #setup symlinks
 ln -sf "$HOME/code/dotfiles/.vimrc" "$HOME/.vimrc"
 ln -sf "$HOME/code/dotfiles/.bashrc" "$HOME/.bashrc"
