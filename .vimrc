@@ -27,13 +27,17 @@ Plugin 'sjl/gundo.vim.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'stargrave/gerrvim'
-Plugin 'JuliaLang/julia-vim'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'neomake/neomake'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'ludovicchabant/vim-gutentags'
 " Plugin 'git://github.com/Rip-Rip/clang_complete'
 Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
 " All plugins must be added before the following line
 call vundle#end()
+
+let g:gutentags_cache_dir = '~/.tags_cache'
 
 if has("gui_running")
 
