@@ -4,7 +4,7 @@ function! SetFont()
     if res =~ "2560x1440"
         set guifont=inconsolata\ 14
     else
-        set guifont=inconsolata\ 13
+        set guifont=inconsolata\ 10
     endif
 endfunction
 
@@ -28,9 +28,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'stargrave/gerrvim'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'neomake/neomake'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'ludovicchabant/vim-gutentags'
 " Plugin 'git://github.com/Rip-Rip/clang_complete'
 Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
