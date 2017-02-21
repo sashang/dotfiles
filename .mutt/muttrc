@@ -33,7 +33,7 @@ macro index \\x "<tag-pattern> ~f \"gerrit-central-no-reply\"\n:set confirmappen
 :set confirmappend=yes delete=ask-yes\n"
 macro index,pager \\s ":source ~/.mutt/muttrc\n"
 macro index \\d "<tag-pattern>all\n:set confirmappend=no delete=yes\n\<tag-prefix-cond><save-message>=Done\n<sync-mailbox>\n\:set confirmappend=yes delete=ask-yes\n"
-macro index \\l "<delete-pattern>~f \"PDLCBALCTS@ex1.eemea.ericsson.se\"\n"
+macro index \\l "<delete-pattern>~f \"PDLPDUCBAL@ericsson.com\"\n"
 bind index,pager G imap-fetch-mail
 bind pager j next-line
 bind pager k previous-line

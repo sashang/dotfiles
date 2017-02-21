@@ -26,16 +26,17 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sjl/gundo.vim.git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
-Plugin 'stargrave/gerrvim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'sheerun/vim-polyglot'
 " Plugin 'git://github.com/Rip-Rip/clang_complete'
-Plugin 'vim-scripts/OmniCppComplete.git'
+"Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
 " All plugins must be added before the following line
 call vundle#end()
 
 let g:gutentags_cache_dir = '~/.tags_cache'
+
+let g:clang_library_path='/usr/lib/libclang.so'
 
 if has("gui_running")
 
