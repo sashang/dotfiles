@@ -97,6 +97,9 @@ nmap <leader>s :source ~/.vimrc<cr>
 "Open the directory browser that the current windowed file is in
 nmap <leader>e :Vex<cr>
 
+"open man page for word under cursor. Uses vim-man plugin.
+nmap <leader>K :Man <C-r><C-w><cr>
+
 "generate tags for coremw
 nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --languages=c,c++ src/ opensaf/<CR>
 
