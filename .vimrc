@@ -201,7 +201,7 @@ let g:clang_debug=0
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
 let s:colorschemes = ['jellybeans', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
-      \ 'brookstream', 'darkocean', 'inkpot', 'darkspectrum', 'freya', 'anokha']
+      \ 'brookstream', 'darkspectrum', 'inkpot', 'darkspectrum', 'freya', 'anokha']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
 function! RotateColorscheme()
