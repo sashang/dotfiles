@@ -19,6 +19,7 @@ set nocompatible
 filetype off
 call vundle#begin()
 " let Vundle manage Vundle, required
+Plugin 'ciaranm/detectindent'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'szw/vim-dict'
 Plugin 'bling/vim-airline'
@@ -174,6 +175,7 @@ set foldcolumn=0
 
 " disable prompt to reload file when changed
 autocmd FileChangedShell * echon "" 
+autocmd BufReadPost * :DetectIndent
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
 autocmd BufRead,BufNewFile,BufEnter $HOME/code/linux/**/*.[hc],Kconfig setlocal noexpandtab tabstop=8 softtabstop=8 shiftwidth=8 textwidth=80
 autocmd BufRead,BufNewFile,BufEnter *.asciidoc
