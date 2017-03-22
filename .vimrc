@@ -177,7 +177,6 @@ set foldcolumn=0
 autocmd FileChangedShell * echon "" 
 autocmd BufReadPost * :DetectIndent
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
-autocmd BufRead,BufNewFile,BufEnter $HOME/code/linux/**/*.[hc],Kconfig setlocal noexpandtab tabstop=8 softtabstop=8 shiftwidth=8 textwidth=80
 autocmd BufRead,BufNewFile,BufEnter *.asciidoc
      \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
      \ textwidth=100 wrap formatoptions=tcqn
