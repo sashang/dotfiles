@@ -108,12 +108,12 @@ nmap <leader>p :set paste<cr>"*p:set nopaste<cr>
 nmap <leader>g :GundoToggle<cr>
 
 " vim-chroot-build mappings
-" /ms = make under src dir
+" \ms = make under src dir
 nmap <leader>ms :call VCBMake('-C src/'))<cr>
-" /mf = make full i.e. make the whole tree.
+" \mf = make full i.e. make the whole tree.
 nmap <leader>mf :call VCBMake()<cr>
-nmap <leader>autoreconf :call VCBAutoreconf()<cr>
-nmap <leader>configure :call VCBConfigure()<cr>
+nmap <leader>a :call VCBAutoreconf()<cr>
+nmap <leader>c :call VCBConfigure()<cr>
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
