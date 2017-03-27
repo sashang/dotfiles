@@ -32,33 +32,17 @@ Plugin 'sheerun/vim-polyglot'
 " Plugin 'git://github.com/Rip-Rip/clang_complete'
 "Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
+Plugin 'sashang/vim-chroot-build'
 " All plugins must be added before the following line
 call vundle#end()
+
+"settings for vim-chroot-build
+let g:vcb_user = 'sashan'
+let g:vcb_chroot_name = 'sles12'
 
 let g:gutentags_cache_dir = '~/.tags_cache'
 
 let g:clang_library_path='/usr/lib/libclang.so'
-
-if has("gui_running")
-
-    "force gvim to maximize
-    set lines=999 columns=999
-
-    "set guifont=Andale\ Mono\:h12
-    "set guifont=SerafettinCartoon\ 11
-    colorscheme jellybeans
-
-    "disable menu, gui etc...who needs a mouse?
-    set guioptions=agi
-
-    "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
-    "colour. This hack get's rid of it.
-    highlight clear Pmenu
-
-    call SetFont()
-else
-    hi Normal ctermbg=None
-endif
 
 filetype plugin indent on
 "set dictionaries to use for looking up words online with vim-dict
@@ -113,7 +97,6 @@ nmap <leader>e :Vexplore<cr>
 nmap <leader>w :botright cwindow<cr>
 nmap <leader>] :botright ptnext<cr>
 nmap <leader>[ :botright ptprev<cr>
-nmap <leader>m :bufdo update<cr>:make -w<cr>
 nmap <c-h> <c-w><c-h>
 nmap <c-l> <c-w><c-l>
 nmap <c-j> <c-w><c-j>
@@ -123,6 +106,14 @@ nmap <leader>p :set paste<cr>"*p:set nopaste<cr>
 
 "toggle Gundo
 nmap <leader>g :GundoToggle<cr>
+
+" vim-chroot-build mappings
+" /ms = make under src dir
+nmap <leader>ms :call VCBMake('-C src/'))<cr>
+" /mf = make full i.e. make the whole tree.
+nmap <leader>mf :call VCBMake()<cr>
+nmap <leader>autoreconf :call VCBAutoreconf()<cr>
+nmap <leader>configure :call VCBConfigure()<cr>
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
@@ -219,5 +210,24 @@ endfunction
 set noerrorbells novb
 set vb t_vb=
 
-source $HOME/code/vim-chroot-build/vim-chroot-build.vim
 
+"some customization if running gvim
+if has("gui_running")
+    "force gvim to maximize
+    set lines=999 columns=999
+
+    "set guifont=Andale\ Mono\:h12
+    "set guifont=SerafettinCartoon\ 11
+    colorscheme jellybeans
+
+    "disable menu, gui etc...who needs a mouse?
+    set guioptions=agi
+
+    "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
+    "colour. This hack get's rid of it.
+    highlight clear Pmenu
+
+    call SetFont()
+else
+    hi Normal ctermbg=None
+endif
