@@ -109,7 +109,7 @@ nmap <leader>g :GundoToggle<cr>
 
 " vim-chroot-build mappings
 " \ms = make under src dir
-nmap <leader>ms :call VCBMake('-C src/'))<cr>
+nmap <leader>ms :call VCBMake('-C src/')<cr>
 " \mf = make full i.e. make the whole tree.
 nmap <leader>mf :call VCBMake()<cr>
 nmap <leader>a :call VCBAutoreconf()<cr>
