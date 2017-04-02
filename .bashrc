@@ -32,7 +32,6 @@ YELLOW="\[\033[1;33m\]"
 WHITE="\[\033[1;37m\]"
 export PROMPT_COMMAND='RET=$?;\
     SLASH_COUNT=$(pwd | grep -o "/" | wc -l);\
-    echo $SLASH_COUNT
     if [[ $SLASH_COUNT -lt 4 ]]; then\
         PARTIAL_PWD=$(pwd);\
     else\
