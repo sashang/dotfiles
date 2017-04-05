@@ -19,6 +19,8 @@ set nocompatible
 filetype off
 call vundle#begin()
 " let Vundle manage Vundle, required
+Plugin 'easymotion/vim-easymotion'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'ciaranm/detectindent'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'szw/vim-dict'
@@ -29,6 +31,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'airblade/vim-gitgutter'
 " Plugin 'git://github.com/Rip-Rip/clang_complete'
 "Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
@@ -42,7 +45,7 @@ let g:vcb_chroot_name = 'sles12'
 
 let g:gutentags_cache_dir = '~/.tags_cache'
 
-let g:clang_library_path='/usr/lib/libclang.so'
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
 
 filetype plugin indent on
 "set dictionaries to use for looking up words online with vim-dict
@@ -75,9 +78,6 @@ nmap <leader>d :bd!<cr>
 
 "nmap \f to format paragraph
 nmap <leader>f vapgq<cr>
-
-"nmap \s to loading the vimrc file
-nmap <leader>s :source ~/.vimrc<cr>
 
 "Open the directory browser that the current windowed file is in
 nmap <leader>e :Vex<cr>
