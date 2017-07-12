@@ -43,9 +43,14 @@ call vundle#end()
 let g:vcb_user = 'sashan'
 let g:vcb_chroot_name = 'sles12'
 
-let g:gutentags_cache_dir = '~/.tags_cache'
-
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = "debug"
+
+"detect indent plugin customization
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 4
+let g:detectindent_preferred_when_mixed = 4
 
 filetype plugin indent on
 "set dictionaries to use for looking up words online with vim-dict
@@ -179,6 +184,7 @@ autocmd BufRead,BufNewFile,BufEnter *.asciidoc
 "ctrlp customization
 let g:ctrlp_by_filename = 0
 let g:ctrlp_working_path_mode = 'rwa'
+let g:ctrlp_max_files = 0
 
 "clang customization
 let g:clang_complete_copen=1
