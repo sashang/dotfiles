@@ -75,6 +75,9 @@ vmap ; :
 "toggle show list (shows whitespace characters)
 nmap <leader>l :set list!<cr>
 
+"map esc to jk
+inoremap jk <esc> 
+
 "toggle highlight search
 nmap <leader>h :set hlsearch!<cr>
 
