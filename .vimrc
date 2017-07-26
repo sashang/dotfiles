@@ -36,12 +36,15 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sashang/vim-chroot-build'
+Plugin 'skywind3000/asyncrun.vim'
+
 " All plugins must be added before the following line
 call vundle#end()
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
 let g:vcb_chroot_name = 'sles12'
+let g:vcb_configure_args = '--enable-tests --enable-brf-tests'
 
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_server_keep_logfiles = 1
