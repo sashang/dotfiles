@@ -44,7 +44,6 @@ call vundle#end()
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
 let g:vcb_chroot_name = 'sles12'
-let g:vcb_configure_args = '--enable-tests --enable-brf-tests'
 
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_server_keep_logfiles = 1
@@ -54,6 +53,9 @@ let g:ycm_server_log_level = "debug"
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
 let g:detectindent_preferred_when_mixed = 4
+
+"settings for airline
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 
 filetype plugin indent on
 "set dictionaries to use for looking up words online with vim-dict
