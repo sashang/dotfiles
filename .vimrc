@@ -27,6 +27,7 @@ Plugin 'szw/vim-dict'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sjl/gundo.vim.git'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bruno-/vim-man'
 Plugin 'elixir-lang/vim-elixir'
@@ -117,13 +118,6 @@ nmap <leader>p :set paste<cr>"*p:set nopaste<cr>
 "toggle Gundo
 nmap <leader>g :GundoToggle<cr>
 
-" vim-chroot-build mappings
-" \ms = make under src dir
-nmap <leader>ms :call VCBMake('-C src/')<cr>
-" \mf = make full i.e. make the whole tree.
-nmap <leader>mf :call VCBMake()<cr>
-nmap <leader>a :call VCBAutoreconf()<cr>
-nmap <leader>c :call VCBConfigure()<cr>
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
