@@ -39,6 +39,7 @@ Plugin 'ajmwagar/vim-deus'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sashang/vim-chroot-build'
 Plugin 'skywind3000/asyncrun.vim'
+Plugin 'arcticicestudio/nord-vim'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -198,7 +199,7 @@ let g:clang_debug=0
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['jellybeans', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['deus', 'jellybeans', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkspectrum', 'inkpot', 'freya', 'anokha']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
@@ -224,7 +225,7 @@ if has("gui_running")
 
     "set guifont=Andale\ Mono\:h12
     "set guifont=SerafettinCartoon\ 11
-    colorscheme jellybeans
+    colorscheme deus
 
     "disable menu, gui etc...who needs a mouse?
     set guioptions=agi
