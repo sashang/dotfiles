@@ -19,6 +19,7 @@ set nocompatible
 filetype off
 call vundle#begin()
 " let Vundle manage Vundle, required
+Plugin 'eugen0329/vim-esearch'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ciaranm/detectindent'
@@ -75,6 +76,8 @@ set incsearch
 
 "This carries the indent from the previous line onto the next line
 set autoindent
+
+set background=dark
 
 "make life easy
 nmap ; :
@@ -199,7 +202,7 @@ let g:clang_debug=0
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['deus', 'jellybeans', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['deus', 'jellybeans', 'no-quarter', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkspectrum', 'inkpot', 'freya', 'anokha']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
