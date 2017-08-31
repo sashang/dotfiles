@@ -95,8 +95,8 @@ nmap <leader>h :set hlsearch!<cr>
 "nmap \d to deleting buffers
 nmap <leader>d :bd!<cr>
 
-"nmap \f to format paragraph
-nmap <leader>f vapgq<cr>
+"nmap \f to most recently used files
+nmap <leader>f :CtrlPMRU<cr>
 
 "Open the directory browser that the current windowed file is in
 nmap <leader>e :Vex<cr>
@@ -105,7 +105,7 @@ nmap <leader>e :Vex<cr>
 nmap <leader>K :Man <C-r><C-w><cr>
 
 "start ctrlp Most Recently used buffers
-nmap <leader>b :CtrlPMRU<cr>
+nmap <leader>b :CtrlPBuffer<cr>
 
 "force reload of buffer from file
 nmap <leader>r :edit!<cr>
@@ -126,7 +126,7 @@ nmap <leader>g :GundoToggle<cr>
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
-set wildignore=*.o,*.cmx,*.cma,*.cmi,*.cmo
+set wildignore=*.o,*.cmx,*.cma,*.cmi,*.cmo,*.so,*.a,.git
 
 "jump to regex matches
 set showmatch
