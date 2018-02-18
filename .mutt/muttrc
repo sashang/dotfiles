@@ -41,5 +41,5 @@ bind pager k previous-line
 auto_view text/html
 alternative_order text/plain text/html
 
-source ~/.mutt/vombatidae
+source ~/.mutt/theme
 source $alias_file

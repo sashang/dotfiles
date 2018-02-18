@@ -230,7 +230,7 @@ if has("gui_running")
 
     "set guifont=Andale\ Mono\:h12
     "set guifont=SerafettinCartoon\ 11
-    colorscheme deus
+    colorscheme no_quarter
 
     "disable menu, gui etc...who needs a mouse?
     set guioptions=agi
