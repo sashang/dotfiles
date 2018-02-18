@@ -47,7 +47,9 @@ call vundle#end()
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
-let g:vcb_chroot_name = 'sles12'
+let g:vcb_chroot_name = 'sles12.2'
+let g:vcb_cc = 'ccache\ gcc'
+let g:vcb_cxx = 'ccache\ g++'
 
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_server_keep_logfiles = 1
