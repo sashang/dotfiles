@@ -19,6 +19,7 @@ set nocompatible
 filetype off
 call vundle#begin()
 " let Vundle manage Vundle, required
+Plugin 'dracula/vim'
 Plugin 'eugen0329/vim-esearch'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
@@ -84,7 +85,14 @@ set background=dark
 "make life easy
 nmap ; :
 vmap ; :
-
+"configure esearch to use the quickfix view instead.
+let g:esearch = {
+  \ 'adapter':    'ag',
+  \ 'backend':    'vim8',
+  \ 'out':        'qflist',
+  \ 'batch_size': 1000,
+  \ 'use':        ['visual', 'hlsearch', 'last'],
+  \}
 "toggle show list (shows whitespace characters)
 nmap <leader>l :set list!<cr>
 
