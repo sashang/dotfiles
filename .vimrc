@@ -19,6 +19,8 @@ set nocompatible
 filetype off
 call vundle#begin()
 " let Vundle manage Vundle, required
+Plugin 'dracula/vim'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'eugen0329/vim-esearch'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'Valloric/YouCompleteMe'
@@ -44,6 +46,9 @@ Plugin 'arcticicestudio/nord-vim'
 
 " All plugins must be added before the following line
 call vundle#end()
+"settings for better whitespace, a plugin that marks trailing whitespace
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
@@ -84,7 +89,14 @@ set background=dark
 "make life easy
 nmap ; :
 vmap ; :
-
+"configure esearch to use the quickfix view instead.
+let g:esearch = {
+  \ 'adapter':    'ag',
+  \ 'backend':    'vim8',
+  \ 'out':        'qflist',
+  \ 'batch_size': 1000,
+  \ 'use':        ['visual', 'hlsearch', 'last'],
+  \}
 "toggle show list (shows whitespace characters)
 nmap <leader>l :set list!<cr>
 
@@ -225,9 +237,6 @@ set vb t_vb=
 
 "some customization if running gvim
 if has("gui_running")
-    "force gvim to maximize
-    set lines=999 columns=999
-
     "set guifont=Andale\ Mono\:h12
     "set guifont=SerafettinCartoon\ 11
     colorscheme no_quarter
