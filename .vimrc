@@ -101,7 +101,7 @@ let g:esearch = {
 nmap <leader>l :set list!<cr>
 
 "map esc to jk
-inoremap jk <esc> 
+inoremap jk <esc>
 
 "toggle highlight search
 nmap <leader>h :set hlsearch!<cr>
@@ -188,7 +188,7 @@ set foldcolumn=0
 " set statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " disable prompt to reload file when changed
-autocmd FileChangedShell * echon "" 
+autocmd FileChangedShell * echon ""
 autocmd BufReadPost * :DetectIndent
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
 autocmd BufRead,BufNewFile,BufEnter *.asciidoc
