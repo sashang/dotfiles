@@ -14,7 +14,8 @@ export HISTCONTROL=erasedups
 shopt -s histappend
 # User specific aliases and functions
 #alias omake="omake -j2 --verbose"
-export PATH=$PATH:$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$HOME/.gem/ruby/2.4.0/bin
+NPM_PACKAGES=${HOME}/.npm-packages
+export PATH=$NPM_PACKAGES/bin:$HOME/bin:$HOME/.gem/ruby/2.4.0/bin:$PATH
 export EDITOR=vim
 BLUE="\[\033[0;34m\]"
 GREEN="\[\033[0;32m\]"

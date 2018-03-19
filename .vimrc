@@ -190,6 +190,7 @@ set foldcolumn=0
 " disable prompt to reload file when changed
 autocmd FileChangedShell * echon ""
 autocmd BufReadPost * :DetectIndent
+autocmd BufRead,BufNewFile,BufEnter *.elm setlocal autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
 autocmd BufRead,BufNewFile,BufEnter *.asciidoc
      \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
@@ -246,7 +247,7 @@ if has("gui_running")
 
     "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
     "colour. This hack get's rid of it.
-    highlight clear Pmenu
+    "highlight clear Pmenu
 
     call SetFont()
 else
