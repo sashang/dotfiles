@@ -110,7 +110,7 @@ nmap <leader>h :set hlsearch!<cr>
 nmap <leader>d :bd!<cr>
 
 "nmap \f to most recently used files
-nmap <leader>f :CtrlPMRU<cr>
+nmap <leader>pf :CtrlPMRU<cr>
 
 "Open the directory browser that the current windowed file is in
 nmap <leader>e :Vex<cr>
@@ -119,7 +119,9 @@ nmap <leader>e :Vex<cr>
 nmap <leader>K :Man <C-r><C-w><cr>
 
 "start ctrlp Most Recently used buffers
-nmap <leader>b :CtrlPBuffer<cr>
+nmap <leader>pb :CtrlPBuffer<cr>
+
+nmap <leader>pp :CtrlP .<cr>
 
 "force reload of buffer from file
 nmap <leader>r :edit!<cr>
@@ -190,6 +192,7 @@ set foldcolumn=0
 " disable prompt to reload file when changed
 autocmd FileChangedShell * echon ""
 autocmd BufReadPost * :DetectIndent
+autocmd BufRead,BufNewFile,BufEnter *.eliom,*.eliomi setlocal syntax=ocaml
 autocmd BufRead,BufNewFile,BufEnter *.elm setlocal autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
 autocmd BufRead,BufNewFile,BufEnter *.asciidoc
