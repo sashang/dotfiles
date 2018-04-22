@@ -43,6 +43,9 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'sashang/vim-chroot-build'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'fsharp/vim-fsharp'
+Plugin 'scrooloose/syntastic'
+Plugin 'ayu-theme/ayu-vim'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -112,16 +115,17 @@ nmap <leader>d :bd!<cr>
 "nmap \f to most recently used files
 nmap <leader>pf :CtrlPMRU<cr>
 
+"start ctrlp Most Recently used buffers
+nmap <leader>pb :CtrlPBuffer<cr>
+
+nmap <leader>pp :CtrlP .<cr>
+
 "Open the directory browser that the current windowed file is in
 nmap <leader>e :Vex<cr>
 
 "open man page for word under cursor. Uses vim-man plugin.
 nmap <leader>K :Man <C-r><C-w><cr>
 
-"start ctrlp Most Recently used buffers
-nmap <leader>pb :CtrlPBuffer<cr>
-
-nmap <leader>pp :CtrlP .<cr>
 
 "force reload of buffer from file
 nmap <leader>r :edit!<cr>
@@ -220,7 +224,7 @@ let g:clang_debug=0
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['deus', 'jellybeans', 'no-quarter', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
+let s:colorschemes = ['ayu', 'deus', 'jellybeans', 'no-quarter', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkspectrum', 'inkpot', 'freya', 'anokha']
 let s:colorscheme_idx = 0
 "function that rotates through the colorscheme array.
@@ -241,16 +245,14 @@ set vb t_vb=
 
 "some customization if running gvim
 if has("gui_running")
-    "set guifont=Andale\ Mono\:h12
-    "set guifont=SerafettinCartoon\ 11
-    colorscheme no_quarter
+    colorscheme ayu
 
     "disable menu, gui etc...who needs a mouse?
     set guioptions=agi
 
     "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
     "colour. This hack get's rid of it.
-    "highlight clear Pmenu
+    highlight clear Pmenu
 
     call SetFont()
 else
