@@ -47,6 +47,7 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'fsharp/vim-fsharp'
 Plugin 'scrooloose/syntastic'
 Plugin 'ayu-theme/ayu-vim'
+Plugin 'mhartington/oceanic-next'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -231,6 +232,10 @@ set termguicolors
 let s:colorschemes = ['ayu', 'deus', 'jellybeans', 'no-quarter', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkspectrum', 'inkpot', 'freya', 'anokha']
 let s:colorscheme_idx = 0
+
+if (has("termguicolors"))
+  set termguicolors
+ endif
 "function that rotates through the colorscheme array.
 function! RotateColorscheme()
     let s:colorscheme_idx += 1
