@@ -4,7 +4,7 @@ function! SetFont()
     if res =~ "2560x1440"
         set guifont=inconsolata\ 14
     else
-        set guifont=inconsolata\ 10
+        set guifont=inconsolata\ 12
     endif
 endfunction
 
