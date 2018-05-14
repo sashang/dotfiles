@@ -196,6 +196,7 @@ set foldcolumn=0
 " disable prompt to reload file when changed
 autocmd FileChangedShell * echon ""
 autocmd BufReadPost * :DetectIndent
+autocmd BufRead,BufNewFile,BufEnter *.yml.template setlocal syntax=yaml
 autocmd BufRead,BufNewFile,BufEnter *.eliom,*.eliomi setlocal syntax=ocaml
 autocmd BufRead,BufNewFile,BufEnter *.elm setlocal autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
