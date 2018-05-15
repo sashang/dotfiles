@@ -220,8 +220,10 @@ let g:ctrlp_max_files = 0
 let g:clang_complete_copen=1
 let g:clang_periodic_quickfix=0
 let g:clang_debug=0
-"let g:clang_user_options='-fblocks -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300'
-"let g:clang_user_options='-std=c++98'
+
+"ayu theme customization
+let ayucolor="mirage"
+set termguicolors
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
