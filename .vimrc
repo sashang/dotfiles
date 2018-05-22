@@ -55,6 +55,9 @@ call vundle#end()
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
+"settings for fsharp
+let g:fsharp_map_keys = 0
+
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
 let g:vcb_chroot_name = 'sles12.2'
