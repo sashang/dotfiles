@@ -28,6 +28,7 @@ Plugin 'ciaranm/detectindent'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'szw/vim-dict'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'sjl/gundo.vim.git'
 Plugin 'scrooloose/nerdcommenter'
@@ -96,7 +97,7 @@ vmap ; :
 let g:esearch = {
   \ 'adapter':    'ag',
   \ 'backend':    'vim8',
-  \ 'out':        'qflist',
+  \ 'out':        'win',
   \ 'batch_size': 1000,
   \ 'use':        ['visual', 'hlsearch', 'last'],
   \}
