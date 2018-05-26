@@ -48,7 +48,7 @@ function fish_prompt --description 'Write out the prompt'
             end
             set git_branch (git branch 2>/dev/null | grep \* |  cut -d " " -f 2)
             set git_branch_color (set_color brmagenta)
-            printf '%s%s@%s %s%s %s%s%s %s%s%s \f\r> ' \
+            printf '%s%s@%s %s%s %s%s%s %s%s%s > ' \
                 "$__fish_color_blue" $USER (prompt_hostname) \
                 "$__fish_prompt_cwd" "$partial_pwd" \
                 "$git_branch_color" "$git_branch" "$__fish_prompt_normal" \
