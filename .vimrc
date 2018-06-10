@@ -64,6 +64,7 @@ let g:vcb_chroot_name = 'sles12.2'
 let g:vcb_cc = 'ccache\ gcc'
 let g:vcb_cxx = 'ccache\ g++'
 
+let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = "debug"
@@ -107,9 +108,6 @@ let g:esearch = {
   \}
 "toggle show list (shows whitespace characters)
 nmap <leader>l :set list!<cr>
-
-"map esc to jk
-inoremap jk <esc>
 
 "toggle highlight search
 nmap <leader>h :set hlsearch!<cr>
@@ -187,7 +185,7 @@ set softtabstop=4
 "allow the cursor free range of movement in all modes (visual, insert etc..)
 set virtualedit=block
 
-set textwidth=100
+set textwidth=80
 
 "Give the status line a line of it's own so it's not shared with the command
 "line
