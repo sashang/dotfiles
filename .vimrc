@@ -1,12 +1,4 @@
 
-function! SetFont()
-    let res=system('xrandr | egrep "\*" | cut -f 4 -d " "')
-    if res =~ "2560x1440"
-        set guifont=inconsolata\ 14
-    else
-        set guifont=inconsolata\ 12
-    endif
-endfunction
 
 syntax on
 set shell=bash
@@ -42,6 +34,7 @@ Plugin 'ajmwagar/vim-deus'
 "Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sashang/vim-chroot-build'
+Plugin 'sashang/vim-bits-and-pieces'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'fsharp/vim-fsharp'
@@ -241,27 +234,9 @@ autocmd BufRead,BufNewFile,BufEnter *.asciidoc
 
 "ayu theme customization
 let ayucolor="mirage"
-set termguicolors
-
-"define a script variable that indexes into the colorscheme array
-"these contain my favourite colorschemes
-let s:colorschemes = ['ayu', 'deus', 'jellybeans', 'no-quarter', 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
-      \ 'brookstream', 'darkspectrum', 'inkpot', 'freya', 'anokha']
-let s:colorscheme_idx = 0
-
 if (has("termguicolors"))
   set termguicolors
- endif
-"function that rotates through the colorscheme array.
-function! RotateColorscheme()
-    let s:colorscheme_idx += 1
-    if s:colorscheme_idx >= len(s:colorschemes)
-        let s:colorscheme_idx = 0
-    endif
-    let l:name = s:colorschemes[s:colorscheme_idx]
-    execute 'colorscheme '.l:name
-endfunction
-
+endif
 
 "some customization if running gvim
 if has("gui_running")
