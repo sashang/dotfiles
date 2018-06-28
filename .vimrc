@@ -5,6 +5,7 @@ set shell=bash
 set dir=/tmp,$HOME/tmp
 set history=100
 
+"----------------- Start Vundle Setup ------------------------------------"
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set nocompatible
@@ -44,6 +45,9 @@ Plugin 'mhartington/oceanic-next'
 
 " All plugins must be added before the following line
 call vundle#end()
+filetype plugin indent on
+
+"----------------- End Vundle Setup ------------------------------------"
 
 "--------------- Plugin configuration ----------------------------------"
 
@@ -73,7 +77,6 @@ let g:detectindent_preferred_when_mixed = 4
 "settings for airline
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 
-filetype plugin indent on
 "set dictionaries to use for looking up words online with vim-dict
 let g:dict_hosts = [["dict.org", ["gcide","wn"]]]
 
