@@ -51,6 +51,9 @@ Plugin 'mhartington/oceanic-next'
 
 " All plugins must be added before the following line
 call vundle#end()
+
+"--------------- Plugin configuration ----------------------------------"
+
 "settings for better whitespace, a plugin that marks trailing whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
@@ -81,6 +84,28 @@ filetype plugin indent on
 "set dictionaries to use for looking up words online with vim-dict
 let g:dict_hosts = [["dict.org", ["gcide","wn"]]]
 
+"configure esearch to use the quickfix view instead.
+let g:esearch = {
+  \ 'adapter':    'ag',
+  \ 'backend':    'vim8',
+  \ 'out':        'win',
+  \ 'batch_size': 1000,
+  \ 'use':        ['visual', 'hlsearch', 'last'],
+  \}
+
+"ctrlp customization
+let g:ctrlp_by_filename = 0
+let g:ctrlp_working_path_mode = 'rwa'
+let g:ctrlp_max_files = 0
+
+"clang customization
+let g:clang_complete_copen=1
+let g:clang_periodic_quickfix=0
+let g:clang_debug=0
+
+
+"----------------------------- Customizations -------------------------------"
+
 "allow switching between buffers that have not been written yet - by default vim prohibits this
 set hidden
 
@@ -90,6 +115,10 @@ set nojs
 "incremental search
 set incsearch
 
+"scrolloff - forces lines that would be truncated by the bottom/top edges to
+"show
+set scrolloff=5
+
 "This carries the indent from the previous line onto the next line
 set autoindent
 
@@ -98,14 +127,6 @@ set background=dark
 "make life easy
 nmap ; :
 vmap ; :
-"configure esearch to use the quickfix view instead.
-let g:esearch = {
-  \ 'adapter':    'ag',
-  \ 'backend':    'vim8',
-  \ 'out':        'win',
-  \ 'batch_size': 1000,
-  \ 'use':        ['visual', 'hlsearch', 'last'],
-  \}
 "toggle show list (shows whitespace characters)
 nmap <leader>l :set list!<cr>
 
@@ -182,6 +203,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+"disable bells
+set noerrorbells novb
+set vb t_vb=
+
 "allow the cursor free range of movement in all modes (visual, insert etc..)
 set virtualedit=block
 
@@ -214,16 +239,6 @@ autocmd BufRead,BufNewFile,BufEnter *.asciidoc
 "autocmd BufLeave *.* set tabstop=3 shiftwidth=3 softtabstop=3 textwidth=0
 "
 
-"ctrlp customization
-let g:ctrlp_by_filename = 0
-let g:ctrlp_working_path_mode = 'rwa'
-let g:ctrlp_max_files = 0
-
-"clang customization
-let g:clang_complete_copen=1
-let g:clang_periodic_quickfix=0
-let g:clang_debug=0
-
 "ayu theme customization
 let ayucolor="mirage"
 set termguicolors
@@ -246,11 +261,6 @@ function! RotateColorscheme()
     let l:name = s:colorschemes[s:colorscheme_idx]
     execute 'colorscheme '.l:name
 endfunction
-
-
-"disable bells
-set noerrorbells novb
-set vb t_vb=
 
 
 "some customization if running gvim
