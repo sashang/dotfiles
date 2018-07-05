@@ -1,10 +1,4 @@
 
-
-syntax on
-set shell=bash
-set dir=/tmp,$HOME/tmp
-set history=100
-
 "----------------- Start Vundle Setup ------------------------------------"
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -35,7 +29,6 @@ Plugin 'ajmwagar/vim-deus'
 "Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sashang/vim-chroot-build'
-Plugin 'sashang/vim-bits-and-pieces'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'fsharp/vim-fsharp'
@@ -48,6 +41,35 @@ call vundle#end()
 filetype plugin indent on
 
 "----------------- End Vundle Setup ------------------------------------"
+
+"------------------------------- Functions ----------------------------------"
+
+function! SetFont()
+    let res=system('xrandr | egrep "\*" | cut -f 4 -d " "')
+    if res =~ "2560x1440"
+        set guifont=inconsolata\ 14
+    else
+        set guifont=inconsolata\ 12
+    endif
+endfunction
+
+"define a script variable that indexes into the colorscheme array
+"these contain my favourite colorschemes
+let s:colorschemes = ['ayu', 'deus', 'jellybeans', 'no-quarter',
+      \ 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
+      \ 'brookstream', 'darkspectrum', 'inkpot', 'freya', 'anokha']
+let s:colorscheme_idx = 0
+
+"function that rotates through the colorscheme array.
+function! RotateColorscheme()
+    let s:colorscheme_idx += 1
+    if s:colorscheme_idx >= len(s:colorschemes)
+        let s:colorscheme_idx = 0
+    endif
+    let l:name = s:colorschemes[s:colorscheme_idx]
+    execute 'colorscheme '.l:name
+endfunction
+"------------------------------ End Functions -----------------------------"
 
 "--------------- Plugin configuration ----------------------------------"
 
@@ -101,6 +123,11 @@ let g:clang_debug=0
 
 
 "----------------------------- Customizations -------------------------------"
+
+syntax on
+set shell=bash
+set dir=/tmp,$HOME/tmp
+set history=100
 
 "allow switching between buffers that have not been written yet - by default vim prohibits this
 set hidden
@@ -250,9 +277,11 @@ if has("gui_running")
 
     "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
     "colour. This hack get's rid of it.
-    highlight clear Pmenu
+    "highlight clear Pmenu
 
     call SetFont()
 else
     hi Normal ctermbg=None
 endif
+
+"--------------------------End Customizations -------------------------------"
