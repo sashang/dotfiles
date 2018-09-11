@@ -45,6 +45,7 @@ esac
 function prompt_command {
     export PS1=$(~/.bash_prompt_command)
 }
+PROMPT_DIRTRIM=3
 export PROMPT_COMMAND=prompt_command
 source $HOME/.local.sh
 TERM=xterm
