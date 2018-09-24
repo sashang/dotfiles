@@ -46,13 +46,20 @@ function fish_prompt --description 'Write out the prompt'
             if not set -q __fish_prompt_cwd
                 set -g __fish_prompt_cwd (set_color $fish_color_cwd)
             end
-            set git_branch (git branch 2>/dev/null | grep \* |  cut -d " " -f 2)
-            set git_branch_color (set_color brmagenta)
-            printf '%s%s@%s %s%s %s%s%s %s%s%s > ' \
-                "$__fish_color_blue" $USER (prompt_hostname) \
-                "$__fish_prompt_cwd" "$partial_pwd" \
-                "$git_branch_color" "$git_branch" "$__fish_prompt_normal" \
-                "$__fish_color_status" "$status_indicator" "$__fish_prompt_normal"
+            if git branch > /dev/null 2>&1
+                set git_branch (git branch 2>/dev/null | grep \* |  cut -d " " -f 2)
+                set git_branch_color (set_color brmagenta)
+                printf '%s%s@%s %s%s %s%s%s %s%s%s > ' \
+                    "$__fish_color_blue" $USER (prompt_hostname) \
+                    "$__fish_prompt_cwd" "$partial_pwd" \
+                    "$git_branch_color" "$git_branch" "$__fish_prompt_normal" \
+                    "$__fish_color_status" "$status_indicator" "$__fish_prompt_normal"
+            else
+                printf '%s%s@%s %s%s %s%s%s > ' \
+                    "$__fish_color_blue" $USER (prompt_hostname) \
+                    "$__fish_prompt_cwd" "$partial_pwd" \
+                    "$__fish_color_status" "$status_indicator" "$__fish_prompt_normal"
+            end
 
     end
 end
