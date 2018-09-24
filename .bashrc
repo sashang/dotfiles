@@ -43,7 +43,8 @@ case ${SCHROOT_CHROOT_NAME} in
 esac
 
 function prompt_command {
-    export PS1=$(~/.bash_prompt_command)
+    RET=$?
+    export PS1=$(~/.bash_prompt_command $RET)
 }
 PROMPT_DIRTRIM=3
 export PROMPT_COMMAND=prompt_command
