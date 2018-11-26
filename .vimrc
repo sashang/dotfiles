@@ -288,7 +288,7 @@ endif
 if has('persistent_undo')
     let myundodir = expand('$HOME/.vim/myundodir')
     " Create dirs
-    call system('mkdir ' . vimdir)
+    call system('mkdir ' . expand('$HOME/.vim'))
     call system('mkdir ' . myundodir)
     let &undodir = myundodir
     set undofile
