@@ -78,7 +78,8 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
 "settings for fsharp
-let g:fsharp_map_keys = 0
+let g:fsharp_map_keys = 0 " disable default mappings
+let g:fsharp_only_check_errors_on_write = 1 "disable on the fly checking
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
@@ -90,6 +91,7 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = "debug"
+let g:ycm_min_num_of_chars_for_completion = 99
 
 "detect indent plugin customization
 let g:detectindent_preferred_expandtab = 1
@@ -248,6 +250,7 @@ set foldcolumn=0
 autocmd FileChangedShell * echon ""
 autocmd BufReadPost * :DetectIndent
 autocmd BufRead,BufNewFile,BufEnter *.yml.template setlocal syntax=yaml
+autocmd BufRead,BufNewFile,BufEnter *.fs setlocal textwidth=0
 autocmd BufRead,BufNewFile,BufEnter *.eliom,*.eliomi setlocal syntax=ocaml
 autocmd BufRead,BufNewFile,BufEnter *.elm setlocal autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
