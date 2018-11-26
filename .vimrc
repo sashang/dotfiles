@@ -283,14 +283,10 @@ if has("gui_running")
 else
     hi Normal ctermbg=None
 endif
-"
-" Put plugins and dictionaries in this dir (also on Windows)
-let vimdir = '$HOME/.vim'
-let &runtimepath.=','.vimdir
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
-    let myundodir = expand(vimdir . '/myundodir')
+    let myundodir = expand('$HOME/.vim/myundodir')
     " Create dirs
     call system('mkdir ' . vimdir)
     call system('mkdir ' . myundodir)
