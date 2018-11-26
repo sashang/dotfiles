@@ -268,6 +268,10 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+"change the Pmenu - sometimes depending on colorscheme it is a horrid pink
+"colour. This hack get's rid of it.
+highlight clear Pmenu
+
 "some customization if running gvim
 if has("gui_running")
     colorscheme ayu
@@ -275,13 +279,22 @@ if has("gui_running")
     "disable menu, gui etc...who needs a mouse?
     set guioptions=agi
 
-    "change the Pmenu - sometimes depending on colorscheme it is a horrid pink
-    "colour. This hack get's rid of it.
-    "highlight clear Pmenu
-
     call SetFont()
 else
     hi Normal ctermbg=None
 endif
+"
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimdir = '$HOME/.vim'
+let &runtimepath.=','.vimdir
 
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myundodir = expand(vimdir . '/myundodir')
+    " Create dirs
+    call system('mkdir ' . vimdir)
+    call system('mkdir ' . myundodir)
+    let &undodir = myundodir
+    set undofile
+endif
 "--------------------------End Customizations -------------------------------"
