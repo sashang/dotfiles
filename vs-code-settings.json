@@ -1,0 +1,84 @@
+{
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "off",
+    "editor.renderIndentGuides": false,
+    "window.menuBarVisibility": "toggle",
+    "terminal.external.linuxExec": "/usr/bin/fish",  
+    "FSharp.linter": false,
+    "FSharp.resolveNamespaces": false,
+    "FSharp.externalAutocomplete": false,
+    "window.zoomLevel": 2,
+    "files.autoSave": "onFocusChange",
+    "git.confirmSync": false,
+    "editor.fontFamily": "'Inconsolata', 'Droid Sans Mono', 'monospace'",
+    "editor.fontSize": 14,
+    // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+    "editor.lineHeight": 20,
+    // Enables font ligatures
+    "editor.fontLigatures": true,
+    // Controls if file decorations should use badges.
+    "explorer.decorations.badges": false,
+    "extensions.ignoreRecommendations": true,
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.useCtrlKeys": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [";"],
+            "after": [":"]
+        },
+        {
+            "before":["<leader>","h"],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": ["<leader>","i"],
+            "commands": [ "editor.action.showHover" ]
+        },
+        {
+            "before": ["<leader>","o"],
+            "commands": [ "editor.action.triggerSuggest" ]
+        }
+    ],
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "materialTheme.autoApplyIcons": false,
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#388E3C",
+        "list.activeSelectionForeground": "#388E3C",
+        "list.inactiveSelectionForeground": "#388E3C",
+        "list.highlightForeground": "#388E3C",
+        "scrollbarSlider.activeBackground": "#388E3C50",
+        "editorSuggestWidget.highlightForeground": "#388E3C",
+        "textLink.foreground": "#388E3C",
+        "progressBar.background": "#388E3C",
+        "pickerGroup.foreground": "#388E3C",
+        "tab.activeBorder": "#388E3C",
+        "notificationLink.foreground": "#388E3C",
+        "editorWidget.resizeBorder": "#388E3C",
+        "editorWidget.border": "#388E3C",
+        "settings.modifiedItemForeground": "#388E3C",
+        "panelTitle.activeBorder": "#388E3C"
+    },
+    "materialTheme.accentPrevious": "",
+    "materialTheme.accent": "Breaking Bad",
+    "materialTheme.fixIconsRunning": false,
+    "git.enableSmartCommit": true,
+    "workbench.colorTheme": "Material Theme Palenight High Contrast",
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "breadcrumbs.enabled": true,
+    "FSharp.fsacRuntime": "netcore",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "FSharp.msbuildAutoshow": true,
+    "FSharp.msbuildHost": ".net core",
+    "FSharp.customTypecheckingDelay": 2,
+}
