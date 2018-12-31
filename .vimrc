@@ -282,6 +282,7 @@ if has("gui_running")
     call SetFont()
 else
     hi Normal ctermbg=None
+    highlight clear Pmenu
 endif
 
 " Keep undo history across sessions by storing it in a file
