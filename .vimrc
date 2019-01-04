@@ -31,7 +31,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'sashang/vim-chroot-build'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'arcticicestudio/nord-vim'
-" Plugin 'fsharp/vim-fsharp'
+Plugin 'fsharp/vim-fsharp'
 Plugin 'scrooloose/syntastic'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
@@ -79,6 +79,8 @@ let g:strip_whitespace_on_save=1
 
 "settings for fsharp
 let g:fsharp_map_keys = 0
+let g:syntastic_fsharp_checkers=['syntax']
+let g:fsharp_xbuild_path = "/usr/bin/msbuild"
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'

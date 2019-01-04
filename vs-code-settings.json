@@ -8,7 +8,7 @@
     "FSharp.linter": false,
     "FSharp.resolveNamespaces": false,
     "FSharp.externalAutocomplete": false,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     "files.autoSave": "onFocusChange",
     "git.confirmSync": false,
     "editor.fontFamily": "'Inconsolata', 'Droid Sans Mono', 'monospace'",
@@ -36,6 +36,10 @@
             "commands": [
                 ":nohl"
             ]
+        },
+        {
+            "before": ["<leader>","d"],
+            "commands": [ "workbench.action.closeActiveEditor" ]
         },
         {
             "before": ["<leader>","i"],
@@ -69,7 +73,7 @@
     "materialTheme.accent": "Breaking Bad",
     "materialTheme.fixIconsRunning": false,
     "git.enableSmartCommit": true,
-    "workbench.colorTheme": "Material Theme Palenight High Contrast",
+    "workbench.colorTheme": "Gotham",
     "gitlens.advanced.messages": {
         "suppressLineUncommittedWarning": true,
         "suppressShowKeyBindingsNotice": true
