@@ -276,7 +276,7 @@ highlight clear Pmenu
 
 "some customization if running gvim
 if has("gui_running")
-    colorscheme ayu
+    colorscheme deus
 
     "disable menu, gui etc...who needs a mouse?
     set guioptions=agi
@@ -285,6 +285,7 @@ if has("gui_running")
 else
     hi Normal ctermbg=None
     highlight clear Pmenu
+    colorscheme deus
 endif
 
 " Keep undo history across sessions by storing it in a file

@@ -8,14 +8,14 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 5
-new_float normal
+new_window normal
+new_float 1pixel
 
 # Hide borders
 hide_edge_borders none
 # change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 5
+#bindsym $mod+u border none
+#bindsym $mod+y border pixel 5
 bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -62,7 +62,7 @@ bindsym $mod+F3 exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+Ctrl+t exec --no-startup-id compton -b -D 1000 -f
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -283,17 +283,15 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
-# exec --no-startup-id blueman
-# exec_always --no-startup-id sbxkb
+exec --no-startup-id blueman
+exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
+exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id fix_xcursor
 #
 # choose a random wallpaper
 exec --no-startup-id feh --bg-fill --randomize $HOME/wallpapers
-exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
 
 # Color palette used for the terminal ( ~/.extend.Xresources file )
 # Colors are gathered based on the documentation:
@@ -355,19 +353,19 @@ set $i3_color18         #00b7b4
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	status_command i3status
-	position bottom
+    status_command i3status
+    position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
+#    tray_output primary
+#    tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
-	font xft:Noto Sans 10.5
-	strip_workspace_numbers yes
+    bindsym button4 nop
+    bindsym button5 nop
+    font xft:Noto Sans 10.5
+    strip_workspace_numbers yes
 
-	colors {
+    colors {
 #       background $transparent
         background $i3_background
         statusline $i3_text
@@ -451,3 +449,4 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
