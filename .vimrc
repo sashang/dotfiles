@@ -35,6 +35,7 @@ Plugin 'fsharp/vim-fsharp'
 Plugin 'scrooloose/syntastic'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
+Plugin 'drewtempelmeyer/palenight.vim'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -100,6 +101,7 @@ let g:detectindent_preferred_when_mixed = 4
 
 "settings for airline
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+let g:airline_theme="palenight"
 
 "set dictionaries to use for looking up words online with vim-dict
 let g:dict_hosts = [["dict.org", ["gcide","wn"]]]
@@ -284,8 +286,7 @@ if has("gui_running")
     call SetFont()
 else
     hi Normal ctermbg=None
-    highlight clear Pmenu
-    colorscheme deus
+    colorscheme palenight
 endif
 
 " Keep undo history across sessions by storing it in a file
