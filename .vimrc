@@ -10,7 +10,6 @@ Plugin 'dracula/vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'eugen0329/vim-esearch'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'ciaranm/detectindent'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'szw/vim-dict'
@@ -25,20 +24,28 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ajmwagar/vim-deus'
-" Plugin 'git://github.com/Rip-Rip/clang_complete'
-"Plugin 'vim-scripts/OmniCppComplete.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'sashang/vim-chroot-build'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'arcticicestudio/nord-vim'
-Plugin 'fsharp/vim-fsharp'
 Plugin 'scrooloose/syntastic'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
 Plugin 'drewtempelmeyer/palenight.vim'
+"Plugin 'prabirshrestha/async.vim'
+"Plugin 'prabirshrestha/vim-lsp'
+"Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plugin 'lighttiger2505/deoplete-vim-lsp'
+"Plugin 'mattn/vim-lsp-settings'
+Plugin 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " All plugins must be added before the following line
 call vundle#end()
+
+set hidden
 filetype plugin indent on
 
 "----------------- End Vundle Setup ------------------------------------"
@@ -56,7 +63,7 @@ endfunction
 
 "define a script variable that indexes into the colorscheme array
 "these contain my favourite colorschemes
-let s:colorschemes = ['ayu', 'deus', 'jellybeans', 'no-quarter',
+let s:colorschemes = ['palenight', 'ayu', 'deus', 'jellybeans', 'no-quarter',
       \ 'solarized', 'wombat', 'synic', 'ir_black', 'ps_color',
       \ 'brookstream', 'darkspectrum', 'inkpot', 'freya', 'anokha']
 let s:colorscheme_idx = 0
@@ -79,9 +86,19 @@ let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
 "settings for fsharp
-let g:fsharp_map_keys = 0
-let g:syntastic_fsharp_checkers=['syntax']
-let g:fsharp_xbuild_path = "/usr/bin/msbuild"
+"let g:fsharp_map_keys = 0
+"let g:syntastic_fsharp_checkers=['syntax']
+"let g:fsharp_xbuild_path = "/usr/bin/msbuild"
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+set completefunc=LanguageClient#complete
+let g:LanguageClient_serverCommands = {
+    \ 'fsharp': ['dotnet', '/home/sashan/code/fsharp-language-server/src/FSharpLanguageServer/bin/Release/netcoreapp3.0/FSharpLanguageServer.dll'],
+    \ 'cpp': ['clangd'],
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
@@ -119,11 +136,6 @@ let g:esearch = {
 let g:ctrlp_by_filename = 0
 let g:ctrlp_working_path_mode = 'rwa'
 let g:ctrlp_max_files = 0
-
-"clang customization
-let g:clang_complete_copen=1
-let g:clang_periodic_quickfix=0
-let g:clang_debug=0
 
 
 "----------------------------- Customizations -------------------------------"
@@ -193,7 +205,6 @@ nmap <leader>p :set paste<cr>"*p:set nopaste<cr>
 
 "toggle Gundo
 nmap <leader>g :GundoToggle<cr>
-
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
