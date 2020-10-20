@@ -106,11 +106,6 @@ let g:vcb_chroot_name = 'sles12.2'
 let g:vcb_cc = 'ccache\ gcc'
 let g:vcb_cxx = 'ccache\ g++'
 
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
-let g:ycm_server_keep_logfiles = 1
-let g:ycm_server_log_level = "debug"
-
 "detect indent plugin customization
 let g:detectindent_preferred_expandtab = 1
 let g:detectindent_preferred_indent = 4
