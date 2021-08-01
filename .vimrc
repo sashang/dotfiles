@@ -32,9 +32,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'mhartington/oceanic-next'
 Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 "Plugin 'prabirshrestha/async.vim'
 "Plugin 'prabirshrestha/vim-lsp'
-"Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 "Plugin 'lighttiger2505/deoplete-vim-lsp'
 "Plugin 'mattn/vim-lsp-settings'
 Plugin 'autozimu/LanguageClient-neovim', {
@@ -98,7 +102,8 @@ let g:LanguageClient_serverCommands = {
     \ 'fsharp': ['dotnet', '/home/sashan/code/fsharp-language-server/src/FSharpLanguageServer/bin/Release/netcoreapp3.0/FSharpLanguageServer.dll'],
     \ 'cpp': ['clangd'],
     \ }
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
@@ -261,11 +266,14 @@ autocmd BufRead,BufNewFile,BufEnter *.yml.template setlocal syntax=yaml
 autocmd BufRead,BufNewFile,BufEnter *.eliom,*.eliomi setlocal syntax=ocaml
 autocmd BufRead,BufNewFile,BufEnter *.elm setlocal autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
-autocmd BufRead,BufNewFile,BufEnter *.asciidoc
+autocmd BufRead,BufNewFile,BufEnter *.asciidoc,*.adoc
      \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
      \ textwidth=100 wrap formatoptions=tcqn
      \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
      \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 "
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 "autocmd BufEnter *.java set noexpandtab textwidth=0
