@@ -268,11 +268,11 @@ autocmd BufRead,BufNewFile,BufEnter *.elm setlocal autoindent expandtab tabstop=
 autocmd BufEnter,BufRead *mutt-* set textwidth=100 formatoptions=taqw nopaste
 autocmd BufRead,BufNewFile,BufEnter *.asciidoc,*.adoc
      \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
-     \ textwidth=100 wrap formatoptions=tcqn
+     \ textwidth=0 wrap formatoptions=tcqn
      \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
      \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+autocmd! User GoyoEnter Limelight linebreak
+autocmd! User GoyoLeave Limelight! nolinebreak
 
 "
 "autocmd BufEnter *.ml set tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
