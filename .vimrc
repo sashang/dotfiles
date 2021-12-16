@@ -33,13 +33,19 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
-"Plugin 'prabirshrestha/async.vim'
-"Plugin 'prabirshrestha/vim-lsp'
+Plugin 'rhysd/vim-grammarous'
+Plugin 'ionide/Ionide-vim', {
+  \ 'do':  'make fsautocomplete',
+  \}
 if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  "  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
 endif
-"Plugin 'lighttiger2505/deoplete-vim-lsp'
-"Plugin 'mattn/vim-lsp-settings'
+let g:deoplete#enable_at_startup = 1
+
 Plugin 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -103,6 +109,8 @@ let g:LanguageClient_serverCommands = {
     \ }
 nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
+
+tnoremap <C-[> <C-\><C-n>
 
 "settings for vim-chroot-build
 let g:vcb_user = 'sashan'
