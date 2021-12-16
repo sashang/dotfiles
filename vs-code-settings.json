@@ -145,6 +145,5 @@
     "FSharp.useSdkScripts": true,
     "explorer.confirmDelete": false,
     "workbench.editor.showTabs": true,
-    "update.mode": "none",
-    "FSharp.dotNetRoot": "/home/sashan/code/dotnet/3.1.100",
+    "update.mode": "none",    
 }

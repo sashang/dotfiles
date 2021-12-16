@@ -16,10 +16,10 @@ shopt -s histappend
 #alias omake="omake -j2 --verbose"
 NPM_PACKAGES=${HOME}/.npm-packages
 export PATH=$NPM_PACKAGES/bin:$HOME/bin:$HOME/.gem/ruby/2.4.0/bin:$HOME/.dotnet/tools:$PATH
-export EDITOR=vim
+export EDITOR=nvim
 
 
-if ls --color 2>/dev/null; then
+if ls --color &>/dev/null; then
     alias ls="ls --color"
 else
     alias ls="ls -G"
@@ -48,7 +48,7 @@ function prompt_command {
 }
 PROMPT_DIRTRIM=3
 export PROMPT_COMMAND=prompt_command
-source $HOME/.local.sh
+test -f $HOME/.local.sh && source $HOME/.local.sh
 TERM=xterm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
