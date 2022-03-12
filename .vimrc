@@ -4,55 +4,58 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 set nocompatible
 filetype off
-call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'dracula/vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'eugen0329/vim-esearch'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'ciaranm/detectindent'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'szw/vim-dict'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'sjl/gundo.vim.git'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bruno-/vim-man'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ajmwagar/vim-deus'
-Plugin 'chriskempson/base16-vim'
-Plugin 'sashang/vim-chroot-build'
-Plugin 'skywind3000/asyncrun.vim'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'ayu-theme/ayu-vim'
-Plugin 'mhartington/oceanic-next'
-Plugin 'drewtempelmeyer/palenight.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-Plugin 'rhysd/vim-grammarous'
-Plugin 'ionide/Ionide-vim', {
-  \ 'do':  'make fsautocomplete',
-  \}
-if has('nvim')
-  "  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-
-Plugin 'autozimu/LanguageClient-neovim', {
+call plug#begin()
+Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 
-" All plugins must be added before the following line
-call vundle#end()
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+Plug 'dracula/vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'eugen0329/vim-esearch'
+Plug 'easymotion/vim-easymotion'
+Plug 'ciaranm/detectindent'
+Plug 'gmarik/Vundle.vim'
+Plug 'szw/vim-dict'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sjl/gundo.vim.git'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-fugitive'
+Plug 'bruno-/vim-man'
+Plug 'sheerun/vim-polyglot'
+Plug 'airblade/vim-gitgutter'
+Plug 'ajmwagar/vim-deus'
+Plug 'chriskempson/base16-vim'
+Plug 'sashang/vim-chroot-build'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'scrooloose/syntastic'
+Plug 'ayu-theme/ayu-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'rhysd/vim-grammarous'
+Plug 'ionide/Ionide-vim', {
+  \ 'do':  'make fsautocomplete',
+  \}
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+call plug#end()
+
+let g:deoplete#enable_at_startup = 1
+
+let g:LanguageClient_loggingFile = expand('~/.vim/LanguageClient.log')
+let g:LanguageClient_loggingLevel = 'DEBUG'
 
 set hidden
 filetype plugin indent on
@@ -104,11 +107,15 @@ let g:deoplete#enable_at_startup = 1
 
 set completefunc=LanguageClient#complete
 let g:LanguageClient_serverCommands = {
-    \ 'fsharp': ['dotnet', '/home/sashan/code/fsharp-language-server/src/FSharpLanguageServer/bin/Release/netcoreapp3.0/FSharpLanguageServer.dll'],
+    \ 'fsharp': ['dotnet', '/home/sashan/code/fsharp-language-server/src/FSharpLanguageServer/bin/Release/net6.0/FSharpLanguageServer.dll'],
     \ 'cpp': ['clangd'],
     \ }
-nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> <leader>t :call LanguageClient#textDocument_hover()<CR>
+
+nmap <F5> <Plug>(lcn-menu)
+" Or map each action separately
+nmap <silent>K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
 
 tnoremap <C-[> <C-\><C-n>
 
