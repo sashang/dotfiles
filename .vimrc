@@ -22,7 +22,6 @@ Plug 'szw/vim-dict'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'sjl/gundo.vim.git'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'bruno-/vim-man'
@@ -216,9 +215,6 @@ nmap <c-j> <c-w><c-j>
 nmap <c-k> <c-w><c-k>
 "paste whats in the clipboard register (defined by a mouse selection)
 nmap <leader>p :set paste<cr>"*p:set nopaste<cr>
-
-"toggle Gundo
-nmap <leader>g :GundoToggle<cr>
 
 "useful menu at the bottom of the screen
 set wildchar=<TAB> wildmenu wildmode=full
