@@ -176,9 +176,6 @@ set autoindent
 
 set background=dark
 
-"make life easy
-nmap ; :
-vmap ; :
 "toggle show list (shows whitespace characters)
 nmap <leader>l :set list!<cr>
 
@@ -258,7 +255,7 @@ set vb t_vb=
 "allow the cursor free range of movement in all modes (visual, insert etc..)
 set virtualedit=block
 
-set textwidth=80
+set textwidth=0
 
 "Give the status line a line of it's own so it's not shared with the command
 "line
