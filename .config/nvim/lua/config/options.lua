@@ -6,7 +6,8 @@ opt.number = true -- shows absolute line number on cursor line (when relative nu
 
 -- tabs & indentation
 opt.tabstop = 4 -- 4spaces for tabs (prettier default)
-opt.shiftwidth = 4 -- 2 spaces for indent width
+opt.shiftwidth = 4
+opt.softtabstop = 4
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.shiftround = true
@@ -45,4 +46,8 @@ opt.swapfile = false
 opt.hidden = true
 opt.autowriteall = true
 opt.autoread = true
+
+vim.api.nvim_command('autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi,*.fsl,*.fsy set filetype=fsharp')
+vim.api.nvim_command('autocmd BufNewFile,BufRead *.fsproj,*.csproj,*.vbproj,*.cproj,*.proj set filetype=xml')
+
 
