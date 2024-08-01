@@ -50,4 +50,9 @@ opt.autoread = true
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi,*.fsl,*.fsy set filetype=fsharp')
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.fsproj,*.csproj,*.vbproj,*.cproj,*.proj set filetype=xml')
 
-
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "fs",
+    callback = function()
+        vim.opt_local.makeprg = "dotnet build -nologo -consoleloggerparameters:NoSummary"
+    end,
+})
