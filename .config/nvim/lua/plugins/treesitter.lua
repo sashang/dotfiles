@@ -6,6 +6,9 @@ return {
     "windwp/nvim-ts-autotag",
   },
   config = function()
+    local install = require("nvim-treesitter.install")
+    install.command_extra_args = {curl = {"-k"}}
+
     -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
