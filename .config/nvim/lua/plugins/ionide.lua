@@ -1,3 +1,3 @@
 return {
-    "ionide/ionide-vim"
+    "ionide/ionide-vim",
 }
