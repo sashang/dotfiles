@@ -13,6 +13,11 @@ function fish_prompt --description 'Write out the prompt'
         set -g __fish_color_blue (set_color -o blue)
     end
 
+    set -g __fish_color_yellow (set_color -o yellow)
+    set -g __fish_color_green (set_color -o green)
+    set -g __fish_color_red (set_color -o red)
+    set -g __fish_color_purple (set_color -o purple)
+
     #Set the color for the status depending on the value
     set __fish_color_status (set_color -o green)
     if test $saved_status -gt 0
@@ -47,12 +52,11 @@ function fish_prompt --description 'Write out the prompt'
                 set -g __fish_prompt_cwd (set_color $fish_color_cwd)
             end
             if git branch > /dev/null 2>&1
-                set git_branch (git branch 2>/dev/null | grep \* |  cut -d " " -f 2)
-                set git_branch_color (set_color brmagenta)
-                printf '%s%s@%s %s%s %s%s%s %s%s%s > ' \
-                    "$__fish_color_blue" $USER (prompt_hostname) \
-                    "$__fish_prompt_cwd" "$partial_pwd" \
-                    "$git_branch_color" "$git_branch" "$__fish_prompt_normal" \
+                set -g __fish_git_prompt_show_informative_status
+                printf '%s%s %s%s %s%s %s%s%s > ' \
+                    "$__fish_color_blue" $USER \
+                    "$__fish_color_green" "$partial_pwd" \
+                    "$__fish_color_purple" (fish_git_prompt) \
                     "$__fish_color_status" "$status_indicator" "$__fish_prompt_normal"
             else
                 printf '%s%s@%s %s%s %s%s%s > ' \
