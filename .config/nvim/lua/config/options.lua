@@ -47,6 +47,8 @@ opt.hidden = true
 opt.autowriteall = true
 opt.autoread = true
 
+local fsharp_au_group = vim.api.nvim_create_augroup("fsharp", {clear = true})
+vim.api.nvim_create_autocmd("BufEnter", {command = "compiler dotnet", group = fsharp_au_group, pattern = "*.fs"})
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi,*.fsl,*.fsy set filetype=fsharp')
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.fsproj,*.csproj,*.vbproj,*.cproj,*.proj set filetype=xml')
 
