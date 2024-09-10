@@ -14,7 +14,6 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 
-
 -- Function to get contents of " register and run FsiEval
 function _G.fsi_eval_register()
     -- Get the contents of the " register
