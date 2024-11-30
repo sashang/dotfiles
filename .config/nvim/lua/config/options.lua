@@ -52,7 +52,8 @@ vim.api.nvim_create_autocmd("BufEnter", {command = "compiler dotnet", group = fs
 vim.api.nvim_create_autocmd("BufEnter", {command = "syntax off", group = fsharp_au_group, pattern = "*.fs,*.fsx"})
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi,*.fsl,*.fsy set filetype=fsharp')
 vim.api.nvim_command('autocmd BufNewFile,BufRead *.fsproj,*.csproj,*.vbproj,*.cproj,*.proj set filetype=xml')
-vim.api.nvim_command('syntax off')
+vim.api.nvim_command('autocmd BufNewFile,BufRead *.adoc set filetype=asciidoc textwidth=100')
+vim.api.nvim_command('autocmd BufNewFile,BufRead *.json set filetype=json textwidth=100')
 vim.g[('fsharp#linter')] = 1
 vim.g['fsharp#unused_opens_analyzer'] = 0
 vim.g['fsharp#unused_declarations_analyzer'] = 0
