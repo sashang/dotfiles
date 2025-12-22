@@ -27,6 +27,8 @@ return {
       -- ensure these language parsers are installed
       ensure_installed = {
         "fsharp",
+        "rust",
+        "cpp",
         "json",
         "javascript",
         "typescript",

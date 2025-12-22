@@ -12,6 +12,7 @@ return {
                 ensure_installed = {
                     "rust_analyzer",
                     "fsautocomplete",
+                    "clangd",
                     "lua_ls",
                 },
             })
