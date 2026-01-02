@@ -1,10 +1,17 @@
 local keymap = vim.keymap
 keymap.set("n", "<leader>h", ":set hlsearch!<cr>", {desc = "Turn off search highlights"})
 keymap.set("n", "<leader>d", ":bd<cr>", {desc = "delete buffer"})
-keymap.set('n', '<leader>h', vim.lsp.buf.hover, {desc = 'hover tooltip'})
 keymap.set('n', 'c-]', vim.lsp.buf.definition, {desc = 'function definition'})
 keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {desc = 'code action'})
 keymap.set('n', '<leader>z', '<cmd>Centerpad 80<cr>', {desc = 'center the buffer'})
+
+vim.keymap.set('n', 'K', function()
+  vim.lsp.buf.hover({
+    border = "double", -- Or "rounded", "double", etc.
+    max_height = 25,
+    max_width = 120,
+  })
+end, { desc = "Hover documentation" })
 
 -- telescope
 local builtin = require('telescope.builtin')
@@ -13,6 +20,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>fi', builtin.lsp_implementations, {})
 
 -- Function to get contents of " register and run FsiEval
 function _G.fsi_eval_register()

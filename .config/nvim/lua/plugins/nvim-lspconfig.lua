@@ -4,7 +4,7 @@ return {
         vim.lsp.config('rust_analyzer', {})
         vim.lsp.config('lua_ls', {})
         vim.lsp.config('clangd', {})
+        vim.lsp.config('pylsp', {})
 
-        vim.lsp.enable({ 'rust_analyzer', 'lua_ls', 'clangd' })
     end
 }
