@@ -1,8 +1,5 @@
-# Editor used by CLI
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
-=======
-# .bashrc
 
 # Source global definitions
 if [ -f /etc/bash.bashrc ]; then
@@ -32,20 +29,6 @@ fi
 
 alias less="less -Ri"
 
-case ${SCHROOT_CHROOT_NAME} in
-"rhel6.7")
-    export CC="/opt/gcc/bin/gcc"
-    export CXX="/opt/gcc/bin/g++"
-    ;;
-"sles12")
-    export CC="ccache gcc"
-    export CXX="ccache g++"
-    ;;
-*)
-    export CC=ccache\ gcc
-    export CXX=ccache\ g++
-    ;;
-esac
 
 function prompt_command {
     RET=$?
@@ -57,5 +40,4 @@ test -f $HOME/.local.sh && source $HOME/.local.sh
 TERM=xterm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-source "/etc/profile.d/rvm.sh"
+export PATH="$HOME/.local/bin:$PATH"

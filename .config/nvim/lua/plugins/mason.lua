@@ -14,6 +14,7 @@ return {
                     "fsautocomplete",
                     "clangd",
                     "lua_ls",
+                    "lean-language-server"
                 },
             })
         end
