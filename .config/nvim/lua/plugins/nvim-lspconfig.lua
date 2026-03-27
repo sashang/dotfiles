@@ -1,10 +1,8 @@
 return {
-    "neovim/nvim-lspconfig",
-    config = function()
-        vim.lsp.config('rust_analyzer', {})
-        vim.lsp.config('lua_ls', {})
-        vim.lsp.config('clangd', {})
-        vim.lsp.config('pylsp', {})
-
-    end
+  "neovim/nvim-lspconfig",
+  -- force the lsp setup to load before the nvim loads the buffer type.
+  lazy = false,
+  config = function()
+    require("lsp")
+  end,
 }
