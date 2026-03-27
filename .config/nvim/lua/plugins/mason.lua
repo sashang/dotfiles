@@ -1,22 +1,9 @@
 return {
-    {
-        "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-        end
+  "williamboman/mason.nvim",
+  opts = {
+    registries = {
+      "github:mason-org/mason-registry",
+      "github:Crashdummyy/mason-registry",
     },
-    {
-        "williamboman/mason-lspconfig",
-        config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "rust_analyzer",
-                    "fsautocomplete",
-                    "clangd",
-                    "lua_ls",
-                    "lean-language-server"
-                },
-            })
-        end
-    }
+  },
 }
