@@ -58,3 +58,19 @@ vim.g[('fsharp#linter')] = 1
 vim.g['fsharp#unused_opens_analyzer'] = 0
 vim.g['fsharp#unused_declarations_analyzer'] = 0
 
+-- builtin since nvim 0.11 lsp config
+--vim.lsp.enable({ 'rust_analyzer', 'lua_ls', 'clangd', 'fsautocomplete'})
+
+-- trim trailing whitespace and blank lines on save (exclude markdown)
+local trim_au = vim.api.nvim_create_augroup("trim_whitespace", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = trim_au,
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "markdown" then return end
+    local pos = vim.fn.getpos(".")
+    vim.cmd([[%s/\s\+$//e]])
+    vim.cmd([[%s/\n\+\%$//e]])
+    vim.fn.setpos(".", pos)
+  end,
+})
