@@ -41,3 +41,7 @@ TERM=xterm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$HOME/.local/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/sashan/.local/bin:$PATH"

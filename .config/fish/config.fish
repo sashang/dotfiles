@@ -2,3 +2,9 @@ set -x PATH "/mnt/c/Users/sashan/AppData/Local/Programs/Antigravity/" "$HOME/.el
 set -x EDITOR nvim
 set -x DOTNET_ROOT "$HOME/dotnet/"
 
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/sashan/.local/bin" $PATH
+
+set -gx PATH "/home/sashan/.pixi/bin" $PATH
