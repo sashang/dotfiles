@@ -19,12 +19,11 @@ keymap.set('n', '<leader>e',
 
 -- telescope
 local builtin = require('telescope.builtin')
-keymap.set('n', '<leader>ff', builtin.find_files, {})
-keymap.set('n', '<leader>fg', builtin.live_grep, {})
-keymap.set('n', '<leader>fb', builtin.buffers, {})
-keymap.set('n', '<leader>fh', builtin.help_tags, {})
-keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-keymap.set('n', '<leader>fi', builtin.lsp_implementations, {})
+keymap.set('n', '<leader>f', builtin.find_files, {})
+keymap.set('n', '<leader>g', builtin.live_grep, {})
+keymap.set('n', '<leader>b', builtin.buffers, {})
+keymap.set('n', '<leader>r', builtin.lsp_references, {})
+keymap.set('n', '<leader>i', builtin.lsp_implementations, {})
 
 -- Function to get contents of " register and run FsiEval
 function _G.fsi_eval_register()
@@ -41,7 +40,7 @@ function _G.fsi_eval_register()
 end
 
 -- Set the mapping for normal mode
-vim.api.nvim_set_keymap('n', '<leader>fe', '<cmd>lua fsi_eval_register()<CR>', { noremap = true, silent = true })
+ --vim.api.nvim_set_keymap('n', '<leader>fe', '<cmd>lua fsi_eval_register()<CR>', { noremap = true, silent = true })
 
 -- Set the mapping for visual mode
-vim.api.nvim_set_keymap('v', '<leader>fe', 'y<cmd>lua fsi_eval_register()<CR>', { noremap = true, silent = true })
+ --vim.api.nvim_set_keymap('v', '<leader>fe', 'y<cmd>lua fsi_eval_register()<CR>', { noremap = true, silent = true })

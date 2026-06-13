@@ -58,5 +58,3 @@ vim.g[('fsharp#linter')] = 1
 vim.g['fsharp#unused_opens_analyzer'] = 0
 vim.g['fsharp#unused_declarations_analyzer'] = 0
 
--- builtin since nvim 0.11 lsp config
---vim.lsp.enable({ 'rust_analyzer', 'lua_ls', 'clangd', 'fsautocomplete'})
