@@ -9,6 +9,35 @@ return {
     local install = require("nvim-treesitter.install")
     install.command_extra_args = {curl = {"-k"}}
 
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+    parser_config.fsharp = {
+      install_info = {
+        url = '~/code/tree-sitter-fsharp',
+        files = {'fsharp/src/parser.c', 'fsharp/src/scanner.c'},
+      },
+      requires_generate_from_grammar = false,
+      filetype = "fsharp",
+    }
+
+    parser_config.asciidoc = {
+      install_info = {
+        url = "https://github.com/cathaysia/tree-sitter-asciidoc",
+        location = "tree-sitter-asciidoc",
+        files = {"src/parser.c", "src/scanner.c"},
+        branch = "master",
+      },
+      filetype = "asciidoc",
+    }
+
+    parser_config.asciidoc_inline = {
+      install_info = {
+        url = "https://github.com/cathaysia/tree-sitter-asciidoc",
+        location = "tree-sitter-asciidoc_inline",
+        files = {"src/parser.c", "src/scanner.c"},
+        branch = "master",
+      },
+    }
+
     -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
@@ -50,6 +79,8 @@ return {
         "query",
         "vimdoc",
         "c",
+        "asciidoc",
+        "asciidoc_inline",
       },
       incremental_selection = {
         enable = true,
