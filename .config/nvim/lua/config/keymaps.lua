@@ -13,7 +13,7 @@ keymap.set('n', 'K', function()
   })
 end, { desc = "Hover documentation" })
 
-keymap.set('n', '<leader>e', function() vim.diagnostic.setqflist() end, {desc = "show errors in local window"})
+keymap.set('n', '<leader>e', function() vim.diagnostic.setqflist({ severity = vim.diagnostic.severity.ERROR }) end, {desc = "show errors in local window"})
 
 -- telescope
 local builtin = require('telescope.builtin')

@@ -74,3 +74,23 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.fn.setpos(".", pos)
   end,
 })
+
+-- Highlight diagnostic errors and warnings in the quickfix window
+local qf_hi_au = vim.api.nvim_create_augroup("QuickfixHighlights", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = qf_hi_au,
+  pattern = "qf",
+  callback = function()
+    vim.fn.matchadd('DiagnosticError', '^[^|]*|[^|]* error[^|]*|.*')
+    vim.fn.matchadd('DiagnosticWarn', '^[^|]*|[^|]* warning[^|]*|.*')
+    vim.fn.matchadd('DiagnosticInfo', '^[^|]*|[^|]* info[^|]*|.*')
+    vim.fn.matchadd('DiagnosticHint', '^[^|]*|[^|]* note[^|]*|.*')
+  end,
+})
+
+-- Only show errors in diagnostics (hide warnings, info, and notes)
+vim.diagnostic.config({
+  virtual_text = { severity = vim.diagnostic.severity.ERROR },
+  signs = { severity = vim.diagnostic.severity.ERROR },
+  underline = { severity = vim.diagnostic.severity.ERROR },
+})
